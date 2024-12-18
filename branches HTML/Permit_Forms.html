@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Permit_Forms.css">
+    <link rel="stylesheet" href="navigation_bar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+    <title>Requirement Submission</title>
+</head>
+<body>
+    <!-- NAVIGATION-->   
+    <div class="header">
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
+        <div class="university-text">
+            <p class="up">University of the Philippines</p>
+            <p id="down">Mindanao</p>
+        </div>
+            
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Requirements.html">Requirements</a></li>
+                <li><a href="Requirement Submission.html">Slots</a></li>
+                <li><a href="Permit_Forms.html">Permit Forms</a></li>
+                <li><a href="more_info.html">More Info</a></li>
+            </ul>
+        </nav>
+            
+        <nav class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Requirements.html">Requirements</a></li>
+                <li><a href="Requirement Submission.html">Slots</a></li>
+                <li><a href="Permit_Forms.html">Permit Forms</a></li>
+                <li><a href="more_info.html">More Info</a></li>
+            </ul>
+        </nav> 
+    </div>
+
+    <!--Permit Form-->
+    <div class="bgshade">
+        <h3>Permit Form</h3>
+
+        <form>
+            <fieldset>
+                <div class="name_Snumber-section">
+                    <div>
+                        <label for="fname">FULL NAME</label> <br>
+                        <input id="fname" type="text">
+                    </div>
+                    <div>
+                        <label for="Snumber">STUDENT NUMBER</label> <br>
+                        <input type="number" name="Snumber" id="Snumber">
+                    </div>
+                </div>
+                <br>
+                <div class="permit-section">
+                    <div>
+                        <label class="submissionname" for="filePermit">OVERNIGHT/WEEKEND SLIP CERTIFICATION</label>
+                        <label class="submission" for="filePermit"></label>
+                        <input id="filePermit" type="file">
+                    </div>
+                    <div>
+                        <label class="submissionname" for="filePermit">REQUEST FOR OVERNIGHT/WEEKEND PERMIT</label>
+                        <label class="submission" for="filePermit"></label>
+                        <input id="filePermit" type="file">
+                    </div>
+                </div>
+                
+                
+                
+                <div class="lowertButtons">
+                    <button><a href="index.html">&lt</a></button>
+                    <button type="button" onclick="alert('Form submitted successfully!');">&gt;</button>
+                </div>
+            </fieldset>
+        </form>
+        
+    </div>
+    </div>  
+    <script>
+        function toggleMenu() {
+            var mobileNav = document.getElementById("mobileNav");
+            if (mobileNav.style.display === "flex") {
+                mobileNav.style.display = "none";
+            } else {
+                mobileNav.style.display = "flex";
+            }
+        }
+    </script>
+</body>
+</html>
