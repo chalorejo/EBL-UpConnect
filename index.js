@@ -1,3 +1,5 @@
+
+
 const homeLogo = document.getElementById("homeLogo");
 
 homeLogo.addEventListener("click", function () {
@@ -22,5 +24,10 @@ function toggleMenu() {
         mobileNav.style.display = "flex";
     }
 }
+
+function searchIcon()   {
+    
+}
+
 
 

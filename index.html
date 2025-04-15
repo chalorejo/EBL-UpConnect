@@ -4,15 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EBL UpConnect</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <!-- <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="navigation_bar.css">
     <link rel="stylesheet" href="home_page.css">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="our_services.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <div class="search-box-hidden">
+        <div class="row">
+            <input 
+                type="text" 
+                id="input-box" 
+                placeholder="Search here..."
+                autocomplete="off">
+                <button type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+        </div>
+        <div class="result-box">
+            <ul>
+                <li>Vic</li>
+                <li>Vic</li>
+                <li>Vic</li>
+            </ul>
+        </div>
+    </div>
+
 <!-- NAVIGATION-->   
     <div class="header">
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
@@ -28,6 +49,11 @@
                 <li><a href="Requirements.html">Application</a></li>
                 <li><a href="Permit_Forms.html">Permit Forms</a></li>
                 <li><a href="#Contact_Page">Contacts</a></li>
+                <li>
+                    <button type="button" onclick ="searchIcon()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
             
