@@ -21,14 +21,12 @@
             <p class="up">University of the Philippines</p>
             <p id="down">Mindanao</p>
         </div>
-            
+        
         <nav class="desktop-nav">
             <ul>
                 <li><a href="#About_background">About</a></li>
-                <li><a href="Requirements.html">Requirements</a></li>
-                <li><a href="dorm_res_pay.css">Slots</a></li>
+                <li><a href="Requirements.html">Application</a></li>
                 <li><a href="Permit_Forms.html">Permit Forms</a></li>
-                <li><a href="more_info.html">More Info</a></li>
                 <li><a href="#Contact_Page">Contacts</a></li>
             </ul>
         </nav>
@@ -43,9 +41,9 @@
                 <li><a href="#Contact_Page">Contacts</a></li>
             </ul>
         </nav>
-        
-        
     </div>
+
+    
 <!-- HOME PAGE-->  
     <div class="Home_background">
         <div class="Obli">
@@ -149,7 +147,8 @@
                 <p class="person_name">Alma Tesoro Marcelino</p>
                 <p class="person_det">
                     Acting, Dormitory Manager I<br>
-                    09189184934
+                    09189184934<br>
+                    example@gmail.com
                 </p>
             </div>
         </div>
@@ -160,7 +159,8 @@
                 <p class="person_name">Ms. Shela Aban Camilotes</p>
                 <p class="person_det">
                     Administrative Aide I<br>
-                    09300354751
+                    09300354751<br>
+                    example@gmail.com
                 </p>
             </div>
         </div>
@@ -181,33 +181,6 @@
         <div class="shade-left"></div>
     </div>
 </div>
-
-    <!--JAVA SCRIPT PART-->
-    <script>
-        const homeLogo = document.getElementById("homeLogo");
-
-        homeLogo.addEventListener("click", function () {
-            window.location.href = "index.html"; 
-        });
-
-        up.addEventListener("click", function () {
-            window.location.href = "index.html"; 
-        });
-
-        down.addEventListener("click", function () {
-            window.location.href = "index.html";
-        });
-
-        function toggleMenu() {
-            var mobileNav = document.getElementById("mobileNav");
-            if (mobileNav.style.display === "flex") {
-                mobileNav.style.display = "none";
-            } else {
-                mobileNav.style.display = "flex";
-            }
-        }
-        
-    </script>
 
 <footer>
     <div class="contact_us">
@@ -250,5 +223,8 @@
         </div>
     </div>
 </footer>
+
+<!--JAVA SCRIPT PART-->
+<script src="index.js"></script>
 </body>
 </html>
