@@ -6,7 +6,7 @@
 }
 
 body{
-    background: plum;
+    background: rgb(29, 27, 29);
     color:rgb(0, 0, 0);
 }
 
@@ -53,10 +53,15 @@ button .fa-solid{
 .result-box{
     border-top: 1px solid #999;
     padding: 15px 10px;
+    cursor: pointer;
 }
 
 .result-box ul li{
     list-style: none;
     border-radius: 3px;
     padding: 15px 10px
+}
+
+.result-box ul li:hover{
+    background: #eee;
 }

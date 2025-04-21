@@ -1,4 +1,4 @@
-let availabeKeyWorlds = [
+let availableKeyWords = [
     'Application',
     'Dorm',
     'Dormitory',
@@ -15,20 +15,39 @@ let availabeKeyWorlds = [
     'Responsibility',
     'Reminder',
     'Reminders',
-    'Offenses'
+    'Offenses',
 ];
 
 const resultBox = document.querySelector(".result-box");
-const inputBox = document.getElementId("input-box");
+const inputBox = document.getElementById("input-box");
 
-inputBox.onkeyUp = function(){
+inputBox.onkeyup = function () {
     let result = [];
     let input = inputBox.value;
 
-    if(input.length){
-        result = availabeKeyWorlds.filter((keyword) => {
-            keyword.toLowerCase(input).includes(input);
-        });
-        console.log(result);
+    if (input.length) {
+        result = availableKeyWords.filter((keyword) =>
+            keyword.toLowerCase().includes(input.toLowerCase())
+        );
     }
+
+    display(result);
+};
+
+function display(result) {
+    if (!result.length) {
+        resultBox.innerHTML = ""; // Clear suggestions if nothing matches
+        return;
+    }
+
+    const content = result.map((list) => {
+        return `<li onclick="selectInput(this)">${list}</li>`;
+    });
+
+    resultBox.innerHTML = `<ul>${content.join('')}</ul>`;
+}
+
+function selectInput(element) {
+    inputBox.value = element.innerHTML;
+    resultBox.innerHTML = '';
 }
