@@ -4,31 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EBL UpConnect</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="navigation_bar.css">
-    <link rel="stylesheet" href="home_page.css">
-    <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="our_services.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!--CSS-->
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
+    <link rel="stylesheet" href="../CSS/navigation-bar.css">
+    <link rel="stylesheet" href="../CSS/home-page.css">
+    <link rel="stylesheet" href="../CSS/about.css">
+    <link rel="stylesheet" href="../CSS/our-services.css">
+
+    <!--UP Min Logo-->
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+
+    <!--For icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d5b4e20b91.js" 
+    crossorigin="anonymous"></script>
+
+    <!--Fonts-->
+    <link href="https://fonts.cdnfonts.com/css/optima" rel="stylesheet">
     
 </head>
 <body>
 <!-- NAVIGATION-->   
     <div class="header">
-        <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
         <div class="university-text">
             <p class="up">University of the Philippines</p>
-            <p id="down">Mindanao</p>
+            <p id="down">MINDANAO</p>
         </div>
         
         <nav class="desktop-nav">
             <ul>
                 <li><a href="#About_background">About</a></li>
-                <li><a href="Requirements.html">Application</a></li>
+                <li><a href="../HTML/requirements.html">Application</a></li>
                 <li><a href="Permit_Forms.html">Permit Forms</a></li>
-                <li><a href="#Contact_Page">Contacts</a></li>
                 <li>
                     <button type="button" onclick ="searchIcon()">
                         <i class="fa fa-search"></i>
@@ -40,13 +48,14 @@
         <nav class="mobile-nav" id="mobileNav">
             <ul>
                 <li><a href="#About_background">About</a></li>
-                <li><a href="Requirements.html">Requirements</a></li>
-                <li><a href="dorm_res_pay.html">Slots</a></li>
+                <li><a href="../HTML/requirements.html">Application</a></li>
                 <li><a href="Permit_Forms.html">Permit Forms</a></li>
-                <li><a href="more_info.html">More Info</a></li>
-                <li><a href="#Contact_Page">Contacts</a></li>
+                <li>
+                    <button type="button" onclick ="searchIcon()">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </li>
             </ul>
-        </nav>
     </div>
 
     
@@ -86,148 +95,92 @@
     <div class="Services_background">
         <p>Our Services</p><br>
         
-        
-        <div class="services_container">
-        <a href="Requirements.html">
-            <div class="box">
-                <img src="https://i.ibb.co/NZjRjQJ/2.png" alt="reqs_pic"> 
-                <p class="box-title">Requirements</p>
-                <p class="box-desc">
-                    Dormitory Accommodation<br>
-                    Prioritization Category<br>
-                    Requirements upon check-in<br>
-                    Other requirements
-                </p>
-            </div>
-        </a>
-        
-        <a href="dorm_res_pay.html">
-            <div class="box">
-                <img src="https://i.ibb.co/rZj0QZr/1.png" alt="slots_pic">
-                <p class="box-title">Slots</p>
-                <p class="box-desc">
-                    Dormitory Reservation<br>
-                    Slots Available<br>
-                    <br>
-                    <br>
-                </p>
-            </div>  
-        </a>
+        <div id="services-options">
+            <div class="services_container">
+            <a href="../HTML/requirements.html">
+                <div class="box">
+                    <img src="https://i.ibb.co/NZjRjQJ/2.png" alt="reqs_pic"> 
+                    <p class="box-title">Application</p>
+                    <p class="box-desc">
+                        Dormitory Accommodation<br>
+                        Requirements upon check-in<br>
+                        Other requirements<br>
+                        Application form
+                    </p>
+                </div>
+            </a>
+            
 
-        <a href="Permit_Forms.html">
-            <div class="box">
-                <img src="https://i.ibb.co/gPYfMww/3.png" alt="forms_pic"> 
-                <p class="box-title">Permit Forms</p>
-                <p class="box-desc">
-                    Overnight/Weekend Slip Certification<br>
-                    Request for Overnight/Weekend Permit<br>
-                    <br>
-                    <br>
-                </p>
-            </div>
-        </a>
+            <a href="../HTML/permit-forms.html">
+                <div class="box">
+                    <img src="https://i.ibb.co/gPYfMww/3.png" alt="forms_pic"> 
+                    <p class="box-title">Permit Forms</p>
+                    <p class="box-desc">
+                        Overnight/Weekend Slip Certification<br>
+                        Request for Overnight/Weekend Permit
+                    </p>
+                </div>
+            </a>
 
-        <a href="more_info.html">
-            <div class="box">
-                <img src="https://i.ibb.co/c6nSfv8/Untitled-design-25.png" alt="forms_pic">
-                <p class="box-title">More Info</p>
-                <p class="box-desc">
-                    Dorm policies and regulations<br>
-                    Event schedule and important dates<br>
-                    Frequently Asked Questions (FAQs)<br>
-                    <br>
-                </p>
-            </div>
-        </a>
-        </div> 
-    </div>
+            <a href="../HTML/more-info.html">
+                <div class="box">
+                    <img src="https://i.ibb.co/c6nSfv8/Untitled-design-25.png" alt="forms_pic">
+                    <p class="box-title">More Info</p>
+                    <p class="box-desc">
+                        Policies<br>
+                        Accommodations<br>
+                        Responsibility of Residents<br>
+                        Reminders to Dorm Residents<br>
+                        Offenses
+                    </p>
+                </div>
+            </a>
+            </div> 
 
-<!--CONTACTS-->
-<div id="Contact_Page">
-    <div class="contacts_container">
-        <p>Contacts</p>
-
-        <div class="point_person">
-            <img src="https://i.ibb.co/3zwJf8D/2560px-UPMin-EBL.jpg" alt="faculty_pic">
-            <div class="names">
-                <p class="person_name">Alma Tesoro Marcelino</p>
-                <p class="person_det">
-                    Acting, Dormitory Manager I<br>
-                    09189184934<br>
-                    example@gmail.com
-                </p>
-            </div>
-        </div>
-
-        <div class="point_person">
-            <img src="https://i.ibb.co/3zwJf8D/2560px-UPMin-EBL.jpg" alt="faculty_pic">
-            <div class="names">
-                <p class="person_name">Ms. Shela Aban Camilotes</p>
-                <p class="person_det">
-                    Administrative Aide I<br>
-                    09300354751<br>
-                    example@gmail.com
-                </p>
-            </div>
-        </div>
-
-        <div class="point_person">
-            <img src="https://i.ibb.co/3zwJf8D/2560px-UPMin-EBL.jpg" alt="faculty_pic">
-            <div class="names">
-                <p class="person_name">Student Housing Section</p>
-                <p class="person_det">
-                    shs_osa.upmindanao@up.edu.ph<br>
-                    (082) 293-1353 
-                </p>
-            </div>
         </div>
     </div>
-
-    <div class="Contacts_Obli">
-        <div class="shade-left"></div>
-    </div>
-</div>
 
 <footer>
-    <div class="contact_us">
+    <div class="slogan-for-ebleupconnect">
         <img id="footerLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="UPMin Logo">
         <h6>
-            We Don't Bite - Promise! <br>
-            Contact Us!
+            "Honor, Excellence, and Service"
         </h6>
     </div>
-    <div class="credits">
-        <h1>WEB DEVELOPERS</h1>
-        <div class="developers">
-            <div class="web_dev">
-                <h2>JOE HANNA CANTERO</h2>
-                <p>
-                    jscantero@up.edu.ph<br>
-                    09812292149<br>
-                    University of the Philippines Mindanao - <br> Mintal Davao City Davao del Sur 8000
-                </p>
-            </div>
-            <div class="web_dev">
-                <h2>CHARISSE LOREJO</h2>
-                <p>
-                    cclorejo@up.edu.ph<br>
-                    09475505753<br>
-                    University of the Philippines Mindanao - <br> Mintal Davao City Davao del Sur 8000
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="Prof-credits">
-        <h1>PROFESOR</h1>
-        <div class="web_prof">
-            <h2>CINMAYII MANLIGUEZ</h2>
+
+    <div class="contact-info-of-staff">
+        <div class="staff-one">
+            <h2>Ms. Ann Miraflor Batomalaque</h2>
             <p>
-                cgmanliguez@up.edu.ph<br>
-                09465505753<br>
-                University of the Philippines Mindanao - <br> Mintal Davao City Davao del Sur 8000
+                Dormitory Manager,<br>
+                Student Housing Services<br>
+                Office of Student Affairs<br>
+                University of the Philippines Mindanao<br><br>
+
+                Email: shs_osa.upmindanao@up.edu.ph
+            </p>
+        </div>
+
+        <div class="staff-two">
+            <h2>Ms. Shela A. Camilotes</h2>
+            <p>
+                Residence Life Coordinator,<br>
+                Student Housing Services<br>
+                Office of Student Affairs<br>
+                University of the Philippines Mindanao<br>
+
+                Email: shs_osa.upmindanao@up.edu.ph<br><br>
             </p>
         </div>
     </div>
+    <div class="socials-of-eblupconnect">
+        <h1>Contact us on our Socials!</h1>
+        <div class="socials">
+            <i class="fa-solid fa-magnifying-glass"></i><a href="https://facebook.com/profile.php?id=61550564162328" target="_blank">EBL DORM</a>
+            <i class="fa-solid fa-magnifying-glass"></i><a href="mailto:eliasblopezdormitory@gmail.com" target="_blank">eliasblopezdormitory@gmail.com</a>
+        </div>
+    </div>
+    
 </footer>
 
 <!--JAVA SCRIPT PART-->
