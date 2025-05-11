@@ -1,0 +1,188 @@
+#homeLogo {   /*UP Logo*/
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.445);
+    border-radius: 100%;
+    transition: transform 0.1s ease, box-shadow 0.3s ease; 
+    margin-left: 2%;
+}
+
+#homeLogo:hover{
+    transform: scale(1.02); 
+    cursor: pointer;
+}
+  
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    color: white;
+    background-color: #6d0605;
+    z-index: 1000;
+    padding: 15px 0 16px 0;
+    justify-content: space-between;
+    box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.596); 
+}
+
+.university-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.up{
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #0000003b;
+    font-family: 'Times New Roman', Times, serif;
+    white-space: nowrap;
+    margin: 0;
+}
+
+#down {
+    color: #ececec;
+    text-shadow: 2px 2px 3px #0000006c;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+}
+    
+div p {
+    margin-left: 0;
+    width: 100%;
+}
+
+.desktop-nav {
+    white-space: nowrap; 
+    max-width: 100%; 
+    display: inline-block; 
+    align-items: center;
+    margin-right: 15px; 
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav ul li {
+    position: relative;
+}
+
+.desktop-nav ul li a {
+    text-decoration: none;
+    color: rgb(243, 243, 243); 
+    font-size: 16px;
+}
+
+.desktop-nav ul li a:hover {
+    text-shadow:1px 1px 10px #000000, 1px 1px 10px #000000;
+    font-size: 16.5px;
+    transition: font 1s ease-in;
+    transition: font 0.3s ease-out;
+}
+.desktop-nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #ffbd59;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+}
+
+.desktop-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.desktop-nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 19px;
+    text-shadow: 2px 2px 3px #0000006c;
+}
+
+/*For mobile hamburger nav*/
+.mobile-nav {
+    display: none; 
+}
+
+/*The hamburger icon*/
+.menu-icon {
+    font-size: 38px;
+    margin: 9px -5px 8px 5px; 
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 0;  
+    right: 20px;  
+    display: none;  
+    padding-top: -1px;
+}
+
+@media (max-width: 1060px) {
+    /* Hide Desktop Navigation on small screens */
+    #up{
+        font-size: 10px;
+    }
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Show menu when the hamburger icon is clicked */
+    .mobile-nav {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        background-color: #6d0605;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-nav ul li {
+        margin: 20px 0;
+        font-size: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .up {
+        font-size: x-large;
+        margin: 0;
+    }
+
+    .menu-icon {
+        margin-top: 10px;
+    }
+   
+}
+  
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
