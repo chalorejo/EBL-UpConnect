@@ -1,3 +1,4 @@
+
 /*HOME PAGE*/ 
 .Home_background {
     display: flex;
@@ -41,19 +42,18 @@
 }
   
 .shade {
-    background: linear-gradient(to left, #6d0605, rgba(109, 7, 5, 0.4), rgba(109, 7, 5, 0.1) 60%, transparent);
+    background: linear-gradient(to left, #581026, rgba(109, 7, 5, 0.4), #6d07051a 60%, transparent);
 }
   
 .Name {
     padding: 150px 0 0 20px;
     color: white;
-    background: linear-gradient(to right, #6d0605, rgba(109, 7, 5, 0.7));
+    background: linear-gradient(to right, #581026, #581026b9);
     height: 75%;
     text-shadow: 2px 2px 15px #000000a9;
 }
   
 .upconnect {
-    font-weight: bold;
     margin: 0;
 }
 
@@ -64,39 +64,25 @@
 }
   
 .wconnect {
-    color: #ffbd59;
+    color: #FFB81C;
 }
 
 .ebl {
     font-size: 6.5vw;
     margin-top: 10%;
-    margin-bottom: -8%;
-    font-weight: bold;
+    margin-bottom: 5%;
+    font-family: 'Optima';
 }
 .upconnect {
     font-size: 6.5vw;
-    margin-bottom: 4vw;
-}   
+    margin-bottom: 5vw;
+}
+
+span{
+    font-family: 'Optima';
+}
 
 .values i{
     font-size: 1.5vw;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 720px) {
-    .wconnect,.upconnect, .ebl {
-        font-size: 12.5vw;
-    }
-
-    .upconnect {
-        margin-bottom: 6.5vw;
-    } 
-
-    .values i{
-        font-size: 3vw;
-    }
-
-    .Obli {
-        display: none;
-    }
-}

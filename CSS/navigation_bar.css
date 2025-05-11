@@ -1,0 +1,131 @@
+*{
+    font-family: Helvetica;
+    @import url('https://fonts.cdnfonts.com/css/optima');
+    @import url('https://fonts.cdnfonts.com/css/palatino');
+}
+
+#homeLogo {   /*UP Logo*/
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.445);
+    border-radius: 100%;
+    margin-left: 2%;
+}
+
+#homeLogo:hover{
+    cursor: pointer;
+}
+  
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    color: white;
+    background-color: #8a1438;
+    z-index: 1000;
+    padding: 15px 0 16px 0;
+    justify-content: space-between;
+    box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.596); 
+}
+
+.university-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.up{
+    font-size: 15px;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #0000003b;
+    font-family: 'Palatino';
+    white-space: nowrap;
+    margin: 0;
+}
+
+#down {
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #0000006c;
+    font-family: 'Palatino';
+    margin: 0;
+}
+    
+div p {
+    margin-left: 0;
+    width: 100%;
+}
+
+.desktop-nav {
+    white-space: nowrap; 
+    max-width: 100%; 
+    display: inline-block; 
+    align-items: center;
+    margin-right: 15px; 
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav ul li {
+    position: relative;
+}
+
+.desktop-nav ul li a {
+    text-decoration: none;
+    color: rgb(243, 243, 243); 
+    font-size: 16px;
+}
+
+.desktop-nav ul li a:hover {
+    text-shadow:1px 1px 6px #000000;
+    font-size: 16.5px;
+    transition: font 1s ease-in;
+    transition: font 0.3s ease-out; 
+}
+.desktop-nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #FFB81C;
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+}
+
+.desktop-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.desktop-nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 19px;
+    text-shadow: 2px 2px 3px #0000006c;
+}
+
+  
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.search-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white; /* Icon color */
+    font-size: 1.2rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+

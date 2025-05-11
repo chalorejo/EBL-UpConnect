@@ -1,0 +1,73 @@
+.footer {
+    background-color: #8a1438; /* UP Maroon */
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Optima', sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;  
+    margin: auto;
+    gap: 40px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .footer-logo {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .footer-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .footer-quote {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 16px;
+  }
+  
+  .footer-heading {
+    font-size: 20px;
+    border-bottom: 2px solid #FFB81C;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+  }
+  
+  .footer-contact {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  .footer-contact a {
+    color: #FFB81C;
+    text-decoration: none;
+  }
+  
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+    border-top: 1px solid #aaa;
+    margin-top: 40px;
+  }
+  

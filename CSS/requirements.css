@@ -1,0 +1,141 @@
+
+.req-about {
+    display: flex;
+    height: 1000px;
+    position: relative;
+    height: auto;
+    margin-top: -10px;
+    background-image: url('https://i.ibb.co/H4fR1rL/WEBSITE-DESIGN-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: fit-content;
+    display: flex;
+    flex-grow: 3;
+    padding-right: 2.5rem;
+
+}
+  
+.req-about > div {    
+    flex: 1;
+    position: relative;
+}
+  
+.info {
+    background: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+    border-radius: 12px;                  /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    padding: 30px;                        /* Inner spacing */
+    max-width: 1200px;                     /* Optional width limit */
+    margin: 40px auto;                    /* Center the box */
+    backdrop-filter: blur(8px);          /* Optional: glass effect */
+    
+}
+
+.class-info{
+    margin-top: 75px;
+    margin-bottom: 40px;
+}
+
+.ReqBold, h3 {
+    font-weight: bold;
+    color: #273811;
+}
+
+h3{
+    text-align: center;
+}
+
+.ReqIndent {
+    color: #273811;
+    text-indent: 25px;
+}
+
+
+p, ol, ul {
+    margin-left: 40px;
+    font-size: 1rem;
+}
+
+.ReqBold, .ReqBold-first,.ReqBold-second{
+    margin-left: 40px;
+    font-size: 1rem;
+}
+
+.ReqIndent-first{
+    margin-left: 60px;
+}
+.first {
+    margin-top: -10px;
+}
+
+.second {
+    text-align: justify;
+}
+
+button-1 {
+    font-size: 40px;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+}
+
+.lowertButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+h3 {
+    font-size: 2.3rem;
+    margin-left: 45px;
+    position: relative;
+}
+
+h3:hover {
+    text-shadow:1px 1px 10px #00000011, 1px 1px 10px #00000000;
+    transition: font 1s ease-in;
+    transition: font 0.3s ease-out;
+}
+
+
+.class-info{
+    margin-right: 40px;
+    text-align: justify;
+}
+
+h3:hover::after {
+    width: 7.5%;
+}
+
+h3::after {
+    display: none;
+}
+
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+.image-for-application {
+    height: 60%;
+    margin-bottom: -10px;
+}
+
+
