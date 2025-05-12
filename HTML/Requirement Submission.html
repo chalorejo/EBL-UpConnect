@@ -72,12 +72,116 @@
                             <label for="suffix">Suffix</label> <br>
                             <input id="suffix" type="text" placeholder="ex. Jr., if none leave blank">
                         </div>
+                        <div>
+                            <label for="birthdate">Date of Birth</label> <br>
+                            <input id="birthdate" type="date" placeholder="ex. YYYY/MM/DD" required>
+                        </div>
+                        <div>
+                            <label for="gender">Sex assigned at Birth</label> <br>
+                                    <select name="gender" id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    </select>
+                        </div>
+                        <div>
+                            <label for="student-no">Student Number</label> <br>
+                            <input id="student-no" type="number" placeholder="ex. 2024-XXXXX" required>
+                        </div>
+                        <div>
+                            <label for="department">Department</label> <br>
+                                    <select name="department" id="department">
+                                        <option value="architecture">Architecture</option>
+                                        <option value="human-kinetics">Human Kinetics</option>
+                                        <option value="humanities">Humanities</option>
+                                        <option value="management">Management</option>
+                                        <option value="social-sciences">Social Sciences</option>
+                                        <option value="DBSES">Biological Sciences and Environmental Studies</option>
+                                        <option value="DMPCS">Mathematics, Physics, and Computer Science</option>
+                                        <option value="DFSC" >Food Science and Chemistry</option>
+                                    </select>
+                        </div>
+                        <div>
+                            <label for="course">Course</label> <br>
+                                    <select name="course" id="course" required>
+                                        <option value="aass">AA Sports Studies</option>
+                                        <option value="bacma">BA Anthropology</option>
+                                        <option value="bacma">BA Architechture</option>
+                                        <option value="bacma">BA Communications and Multimedia Arts</option>
+                                        <option value="bacma">BA English</option>
+                                        <option value="bsae">BS Agribusiness Economics</option>
+                                        <option value="bsam">BS Applied Mathematics</option>
+                                        <option value="bsb">BS Biology</option>
+                                        <option value="bscs">BS Computer Science</option>
+                                        <option value="bsds">BS Data Science</option>
+                                        <option value="bsft">BS Food Technology</option>
+                                        <option value="bsss">BS Sports Sciences</option> 
+                                    </select>
+                        </div>
+                        <div>
+                            <label for="year-lvl">Year Level</label> <br>
+                                    <select name="year-lvl" id="year-lvl" required>
+                                        <option value="y1">1st Year</option>
+                                        <option value="y2">2nd Year</option>
+                                        <option value="y3">3rd Year</option>
+                                        <option value="y4">4th Year</option>
+                                        <option value="y5">5th Year</option>
+                                    </select>
+                        </div>
 
+                    <h4>Permanent Address</h4>
+                    <div class="address-section">
+                        <div>
+                            <label for="bldg-no.">Floor no., Bldg. no., House no.</label> <br>
+                            <input id="bldg-no." type="text" required>
+                        </div>
+                        <div>
+                            <label for="subdivision">Street, Bldg, Subdivision, Village</label> <br>
+                            <input id="subdivision" type="text" required>
+                        </div>
+                        <div>
+                            <label for="zipcode">Zipcode</label> <br>
+                            <input id="zipcode" type="number" required>
+                        </div>
+                        <div>
+                            <label for="county">Country</label> <br>
+                            <input id="country" type="text" placeholder="ex. Philippines" required>
+                        </div>
+                        <div>
+                            <label for="region">Region</label> <br>
+                            <input id="region" type="text" placeholder="ex. Davao del Sur" required>
+                        </div>
+                        <div>
+                            <label for="city">City</label> <br>
+                            <input id="city" type="text" placeholder="ex. Davao City" required>
+                        </div>
+                        <div>
+                            <label for="baranggay">Baranggay</label> <br>
+                            <input id="baranggay" type="text" placeholder="ex. Dumoy" required>
+                        </div>
                     </div>
-                    <br>
+
+                    <h4>Contact Information</h4>
+                    <div class="contact-section">
+                        <div>
+                            <label for="cellphone">Cellphone</label> <br>
+                            <input id="cellpohne" type="number" placeholder="ex. (02) 123 4567" required>
+                        </div> 
+                        <div>
+                            <label for="telephone">Telephone</label> <br>
+                            <input id="telepohne" type="number" placeholder="ex. (02) 123 4567" required>
+                        </div> 
+                        <div>
+                            <label for="p-mail">Primary Email Address</label> <br>
+                            <input id="p-email" type="email" placeholder="ex. samplename.gmail.com" required>
+                        </div>
+                        <div>
+                            <label for="s-mail">Secondary Email Address</label> <br>
+                            <input id="s-email" type="email" placeholder="ex. samplename.gmail.com" required>
+                        </div>
+                    </div>
                     <label class="submissionname" for="fileReq">SUBMISSION BIN</label>
                     <label class="submission" for="fileReq">Click Here..</label>
-                    <input id="fileReq" type="file">
+                    <input id="fileReq" type="file" required>
                     
                     <div class="lowertButtons">
                         <button><a href="Requirements.html">&lt</a></button>
