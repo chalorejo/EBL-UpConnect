@@ -28,6 +28,18 @@
     <title>Admin View</title>
 </head>
 <body>
+    <?php if (isset($_GET['updated']) && $_GET['updated'] == 1): ?>
+        <script>
+            alert("Dormer information has been successfully updated.");
+
+            if (history.replaceState) {
+                const url = new URL(window.location);
+                url.searchParams.delete('updated');
+                history.replaceState(null, '', url.toString());
+            }
+        </script>
+    <?php endif; ?>
+
     <h2>Student Records</h2>
     <table>
         <tr>
