@@ -1,15 +1,3 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    background-color: #6d0605;
-    font-family: 'Poppins', sans-serif; 
-    scroll-behavior: smooth;
-}
-
 .bgshade{
     padding-top: 4%;
     background-image: url('https://i.ibb.co/H4fR1rL/WEBSITE-DESIGN-1.png');
@@ -17,6 +5,12 @@ html, body {
     background-size: cover;
     background-position: center;
     height: 100%;
+}
+
+.image-for-application {
+    height: 60%;
+    margin-bottom: -10px;
+    width: 1000px;
 }
 
 fieldset {
@@ -62,16 +56,6 @@ h3:hover {
     transition: font 0.3s ease-out;
 }
 
-h3::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 7px;
-    background-color: #6d0605;
-    transition: width 0.3s ease-in-out;
-    position: absolute;
-}
-
 h3:hover::after {
     width: 15%;
 }
@@ -105,32 +89,6 @@ label {
     color: #b8b8b8;
 }
 
-button {
-    font-size: 40px;
-    font-weight: bold;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background-color: gray;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-button:hover {
-    background-color: #004a20;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-}
-
-button a {
-    text-decoration: none;
-    color: white;
-}
 
 .lowertButtons {
     display: flex;
@@ -139,9 +97,6 @@ button a {
     
 }
 
-#fileReq {
-    visibility: hidden;
-}
 
 .submission {
     background-color: white;
@@ -161,23 +116,4 @@ button a {
 
 .submissionname {
     font-size: large;
-}
-
-@media(max-width: 900px) {
-    h3 {
-        font-size: 2.3rem;
-    }
-
-    .name-section, .Info-section {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    input, .submission {
-        width: 94%;
-    }
-
-    .lowertButtons {
-        gap: 10px;
-    }
 }

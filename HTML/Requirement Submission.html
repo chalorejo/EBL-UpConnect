@@ -3,100 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Requirement Submission.css">
-    <link rel="stylesheet" href="navigation_bar.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../CSS/Requirement_Submission.css">
+    <link rel="stylesheet" href="../CSS/navigation_bar.css">
+
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
     <title>Requirement Submission</title>
 </head>
 <body>
-    <!-- NAVIGATION-->   
+    <!-- NAVBAR-->   
     <div class="header">
-        <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
         <div class="university-text">
             <p class="up">University of the Philippines</p>
-            <p id="down">Mindanao</p>
+            <p id="down">MINDANAO</p>
         </div>
-            
+        
         <nav class="desktop-nav">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Requirements.html">Requirements</a></li>
-                <li><a href="dorm_res_pay.html">Slots</a></li>
-                <li><a href="Permit_Forms.html">Permit Forms</a></li>
-                <li><a href="more_info.html">More Info</a></li>
+                <li><a href="#About_background">About</a></li>
+                <li><a href="../HTML/Requirements.html">Application</a></li>
+                <li><a href="../HTML/Permit_Forms.html">Permit Forms</a></li>
+                <li>
+                    <button type="button" onclick="toggleSearch()" class="search-button">
+                        <i class="fa fa-search" style="color: white;"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
-            
-        <nav class="mobile-nav" id="mobileNav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Requirements.html">Requirements</a></li>
-                <li><a href="dorm_res_pay.html">Slots</a></li>
-                <li><a href="Permit_Forms.html">Permit Forms</a></li>
-                <li><a href="more_info.html">More Info</a></li>
-            </ul>
-        </nav> 
     </div>
+    <!--NAVBAR-->
+
+    <!--IMAGE-->
+    <div class="image-for-application">
+        <img src="https://i.ibb.co/JFkCRXnx/3-Administration-Building.png">
+    </div>
+    <!--IMAGE-->
 
     <!--Sumission Form-->
-    <div class="bgshade">
-        <h3>Requirement Submission</h3>
+    <div class="bgshade">           <!--BG FOR THE DIV-->
+        <div class="req-about">     <!--BOX FOR THR DIV-->
+            <form>
+                <fieldset>
+                    <h3>Application Form</h3>
+                    <p>IMPORTANT NOTE:<br>
+                        The Republic Act (RA) you would use for confidential information in the Philippines is Republic Act No. 10173, 
+                        also known as the Data Privacy Act of 2012. This law aims to protect individual personal information in information and 
+                        communications systems. <br><br>
+                        Everything state in this form will be treated with the UTMOST CONFIDENTIALITY.</p>
+                    
+                    <h4>Student Information</h4>
+                    <div class="student-info-section">
+                        <div>
+                            <label for="fname">First Name</label> <br>
+                            <input id="fname" type="text" placeholder="ex. John" required>
+                        </div>
+                        <div>
+                            <label for="lname">Last Name</label> <br>
+                            <input id="lname" type="text" placeholder="ex. Doe" required>
+                        </div>
+                        <div>
+                            <label for="mname">Middle Name</label> <br>
+                            <input id="mname" type="text" placeholder="ex. Dave">
+                        </div>
+                        <div>
+                            <label for="suffix">Suffix</label> <br>
+                            <input id="suffix" type="text" placeholder="ex. Jr., if none leave blank">
+                        </div>
 
-        <form>
-            <fieldset>
-                <div class="name-section">
-                    <div>
-                        <label for="lname">LAST NAME</label> <br>
-                        <input id="lname" type="text">
                     </div>
-                    <div>
-                        <label for="fname">FIRST NAME</label> <br>
-                        <input id="fname" type="text">
+                    <br>
+                    <label class="submissionname" for="fileReq">SUBMISSION BIN</label>
+                    <label class="submission" for="fileReq">Click Here..</label>
+                    <input id="fileReq" type="file">
+                    
+                    <div class="lowertButtons">
+                        <button><a href="Requirements.html">&lt</a></button>
+                        <button type="button" onclick="alert('Form submitted successfully!');">&gt;</button>
                     </div>
-                    <div>
-                        <label for="mname">MIDDLE NAME</label> <br>
-                        <input id="mname" type="text">
-                    </div>
-                </div>
-                <div class="Info-section">
-                    <div>
-                        <label for="course">COURSE</label> <br>
-                        <input id="course" type="text">
-                    </div>
-                    <div>
-                        <label for="year">YEAR</label> <br>
-                        <input id="year" type="text">
-                    </div>
-                    <div>
-                        <label for="snumber">STUDENT NUMBER</label> <br>
-                        <input id="snumber" type="text">
-                    </div>
-                </div>
-                <br>
-                <label class="submissionname" for="fileReq">SUBMISSION BIN</label>
-                <label class="submission" for="fileReq">Click Here..</label>
-                <input id="fileReq" type="file">
-                
-                <div class="lowertButtons">
-                    <button><a href="Requirements.html">&lt</a></button>
-                    <button type="button" onclick="alert('Form submitted successfully!');">&gt;</button>
-                </div>
-            </fieldset>
-        </form>
-        
+                </fieldset>
+            </form>
+        </div>
     </div>
-    </div>  
-    <script>
-        function toggleMenu() {
-            var mobileNav = document.getElementById("mobileNav");
-            if (mobileNav.style.display === "flex") {
-                mobileNav.style.display = "none";
-            } else {
-                mobileNav.style.display = "flex";
-            }
-        }
-    </script>
 </body>
 </html>
