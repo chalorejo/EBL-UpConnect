@@ -62,46 +62,4 @@ h3:hover::after {
 .highlight {
     color:  #ffbd59;
 }
-@media (max-width: 1080px){
-    .About_background {
-        height: 80%;
-    }
-    .shadeOfAbout {
-        width: 75%;
-    }
-
-    h3 {
-        font-size: 30px;
-        margin: 60px 0 40px 15px;
-    }
-    .about {
-        font-size: 2.2vw;
-        margin-left: 15px;
-        width: 45%;
-    }
-
-    h3:hover::after {
-        width: 55%;
-    }
-}
-@media (max-width: 480px) {
-    .About_background {
-        height: 67%;
-    }
-
-    .shadeOfAbout {
-        width: 75%;
-    }
-
-    h3 {
-        font-size: 30px;
-        margin: 60px 0 40px 15px;
-    }
-
-    .about {
-        font-size: 3.5vw;
-        margin-left: 15px;
-        width: 45%;
-    }
-}
   
