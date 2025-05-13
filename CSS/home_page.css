@@ -42,13 +42,13 @@
 }
   
 .shade {
-    background: linear-gradient(to left, #581026, rgba(109, 7, 5, 0.4), #6d07051a 60%, transparent);
+    background: linear-gradient(to left, #7a1936, rgba(145, 14, 12, 0.4), #ba18161a 60%, transparent);
 }
   
 .Name {
     padding: 150px 0 0 20px;
     color: white;
-    background: linear-gradient(to right, #581026, #581026b9);
+    background: linear-gradient(to right, #7a1936, #7e1836b9);
     height: 75%;
     text-shadow: 2px 2px 15px #000000a9;
 }

@@ -6,11 +6,12 @@
 
     <link rel="stylesheet" href="../CSS/Requirement_Submission.css">
     <link rel="stylesheet" href="../CSS/navigation_bar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
 
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
-    <title>Requirement Submission</title>
+    <title>Application Forms</title>
 </head>
 <body>
     <!-- NAVBAR-->   
@@ -23,7 +24,7 @@
         
         <nav class="desktop-nav">
             <ul>
-                <li><a href="#About_background">About</a></li>
+                <li><a href="../HTML/index.html">About</a></li>
                 <li><a href="../HTML/Requirements.html">Application</a></li>
                 <li><a href="../HTML/Permit_Forms.html">Permit Forms</a></li>
                 <li>
@@ -37,9 +38,7 @@
     <!--NAVBAR-->
 
     <!--IMAGE-->
-    <div class="image-for-application">
-        <img src="https://i.ibb.co/JFkCRXnx/3-Administration-Building.png">
-    </div>
+        <div class="image-for-application"></div>
     <!--IMAGE-->
 
     <!--Sumission Form-->
@@ -125,10 +124,10 @@
                                         <option value="y3">3rd Year</option>
                                         <option value="y4">4th Year</option>
                                         <option value="y5">5th Year</option>
-                                    </select>
+                                    </select><br>
                         </div>
-
-                    <h4>Permanent Address</h4>
+                    </div>
+                    <h4>Permanent Address</h4><br>
                     <div class="address-section">
                         <div>
                             <label for="bldg-no.">Floor no., Bldg. no., House no.</label> <br>
@@ -158,7 +157,7 @@
                             <label for="baranggay">Baranggay</label> <br>
                             <input id="baranggay" type="text" placeholder="ex. Dumoy" required>
                         </div>
-                    </div>
+                    </div><br>
 
                     <h4>Contact Information</h4>
                     <div class="contact-section">
@@ -177,19 +176,65 @@
                         <div>
                             <label for="s-mail">Secondary Email Address</label> <br>
                             <input id="s-email" type="email" placeholder="ex. samplename.gmail.com" required>
-                        </div>
+                        </div><br>
                     </div>
-                    <label class="submissionname" for="fileReq">SUBMISSION BIN</label>
-                    <label class="submission" for="fileReq">Click Here..</label>
+
+                    <h4>Requirement Submission Bin</h4>
+                    <label class="submission" for="fileReq">Add/Drop items here....</label>
                     <input id="fileReq" type="file" required>
                     
                     <div class="lowertButtons">
-                        <button><a href="Requirements.html">&lt</a></button>
-                        <button type="button" onclick="alert('Form submitted successfully!');">&gt;</button>
+                        <button class="back-button"><a href="../HTML/Requirements.html">&lt</a></button>
+                        <button class="next-button"type="button" onclick="alert('Form submitted successfully!')">Submit Now</button>
                     </div>
                 </fieldset>
             </form>
         </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+        <!-- Left: University info -->
+        <div class="footer-section">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/UP_Mindanao_Logo.svg/1200px-UP_Mindanao_Logo.svg.png" alt="UP Mindanao Logo" class="footer-logo">
+            <p class="footer-title">University of the Philippines<br><span class="footer-subtitle">MINDANAO</span></p>
+            <p class="footer-quote">"Honor, <br>Excellence, and <br>Service"</p>
+        </div>
+
+        <!-- Center: Contacts -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Contacts</h3>
+            <div class="footer-contact">
+                <p><strong>Ms. Ann Miraflor Batomalaque</strong><br>
+                    Dormitory Manager,<br>
+                    Student Housing Services<br>
+                    Office of Student Affairs<br>
+                    University of the Philippines Mindanao<br>
+                Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Ms. Shela A. Camilotes</strong><br>
+                    Residence Life Coordinator,<br>
+                    Student Housing Services<br>
+                    Office of Student Affairs<br>
+                    University of the Philippines Mindanao<br>
+                Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
+            </div>
+        </div>
+
+        <!-- Right: Socials -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Follow us on our Socials!</h3>
+            <p><i class="fa fa-facebook-square"></i> EBL DORM</p>
+            <p><i class="fa fa-envelope"></i> eliaslopezdormitory@gmail.com</p>
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2025 University of the Philippines Mindanao
+        </div>
+    </footer>
+    <!-- FOOTER -->
 </body>
 </html>

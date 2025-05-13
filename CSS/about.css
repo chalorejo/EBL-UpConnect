@@ -16,21 +16,25 @@
     padding: 10px;
 }
 
-h3, .about {
+.about {
     width: 25%;
-    color: white;
-    text-shadow: 2px 2px 3px #0000006c;
+    color: #54595F;
 }
 
 h3 {
+    font-family: 'Optima';
+    font-weight: normal;
     font-size: 2.5rem;
     margin-top: 100px;
     margin-left: 45px;
     position: relative;
+    width: 25%;
+    color: #8A1538;
+    text-shadow: 1px 1px 2px #0000006c;
 }
 
 h3:hover {
-    text-shadow:1px 1px 10px #0000006b, 1px 1px 10px #0000008f;
+    text-shadow:1px 1px 3px #0000006b;
     transition: font 1s ease-in;
     transition: font 0.3s ease-out;
 }
@@ -39,8 +43,8 @@ h3::after {
     content: '';
     display: block;
     width: 0;
-    height: 7px;
-    background-color: #ffbd59;
+    height: 3px;
+    background-color: #FFB81C;
     transition: width 0.3s ease-in-out;
     position: absolute;
 }
