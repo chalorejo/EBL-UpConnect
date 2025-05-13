@@ -1,0 +1,49 @@
+body{
+   background-image: url('https://i.ibb.co/H4fR1rL/WEBSITE-DESIGN-1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+#homeLogo {   /*UP Logo*/
+    width: 50px;
+    height: 50px;
+    margin: 0 10px 0 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.445);
+    border-radius: 100%;
+    margin-left: 2%;
+}
+
+#homeLogo:hover{
+    cursor: pointer;
+}
+
+.university-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.up{
+    font-size: 13.5px;
+    color: #8a1438;
+    text-shadow: 2px 2px 3px #0000003b;
+    font-family: 'Palatino';
+    white-space: nowrap;
+    margin: 0;
+}
+
+#down {
+    font-size: 28px;
+    color: #8a1438;
+    text-shadow: 2px 2px 3px #0000006c;
+    font-family: 'Palatino';
+    margin: 0;
+}
+
+.university-text{
+    display: flex;
+    flex-direction: row;
+}
