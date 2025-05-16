@@ -84,7 +84,8 @@ select:focus {
 /* Flex-wrap sections (responsive) */
 .student-info-section,
 .address-section,
-.contact-section {
+.contact-section,
+.emergency-contact-section {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -92,7 +93,8 @@ select:focus {
 
 .student-info-section > div,
 .address-section > div,
-.contact-section > div {
+.contact-section > div, 
+.emergency-contact-section > div {
     flex: 1 1 250px;
     min-width: 250px;
 }

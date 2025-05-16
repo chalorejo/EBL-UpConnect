@@ -133,61 +133,98 @@
                     <div class="address-section">
                         <div>
                             <label for="bldg-no.">Floor no., Bldg. no., House no.</label> <br>
-                            <input id="bldg-no." type="text" required>
+                            <input id="bldg-no." type="text" name="lotNum" required>
                         </div>
                         <div>
                             <label for="subdivision">Street, Bldg, Subdivision, Village</label> <br>
-                            <input id="subdivision" type="text" required>
+                            <input id="subdivision" type="text" name="street" required>
                         </div>
                         <div>
                             <label for="zipcode">Zipcode</label> <br>
-                            <input id="zipcode" type="number" required>
+                            <input id="zipcode" type="number" name="zipcode" required>
                         </div>
                         <div>
                             <label for="county">Country</label> <br>
-                            <input id="country" type="text" placeholder="ex. Philippines" required>
+                            <input id="country" type="text" placeholder="ex. Philippines" name="country" required>
                         </div>
                         <div>
                             <label for="region">Region</label> <br>
-                            <input id="region" type="text" placeholder="ex. Davao del Sur" required>
+                            <select name="region" id="region" required>
+                                <option value="" disabled selected>Select your region</option>
+                                <option value="Region 1">Region I</option>
+                                <option value="Region 2">Region II</option>
+                                <option value="Region 3">Region III</option>
+                                <option value="CALABARZON">Region IV-A</option>
+                                <option value="MIMAROPA">Region IV-B</option>
+                                <option value="Region 5">Region V</option>
+                                <option value="Region 6">Region VI</option>
+                                <option value="Region 7">Region VII</option>
+                                <option value="Region 8">Region VIII</option>
+                                <option value="Region 9">Region IX</option>
+                                <option value="Region 10">Region X</option>
+                                <option value="Region 11">Region XI</option>
+                                <option value="Region 12">Region XII</option>
+                                <option value="Region 13">Region XIII</option>
+                                <option value="NCR">NCR</option>
+                                <option value="CAR">CAR</option>
+                                <option value="BARMM">BARMM</option>
+                            </select>
                         </div>
                         <div>
                             <label for="city">City</label> <br>
-                            <input id="city" type="text" placeholder="ex. Davao City" required>
+                            <input id="city" type="text" placeholder="ex. Davao City" name="city" required>
                         </div>
                         <div>
                             <label for="baranggay">Baranggay</label> <br>
-                            <input id="baranggay" type="text" placeholder="ex. Dumoy" required>
+                            <input id="baranggay" type="text" placeholder="ex. Dumoy" name="barangay" required>
                         </div>
                     </div><br>
 
                     <h4>Contact Information</h4>
                     <div class="contact-section">
                         <div>
-                            <label for="cellphone">Cellphone</label> <br>
-                            <input id="cellpohne" type="number" placeholder="ex. (02) 123 4567" required>
+                            <label for="cellphone">Cellphone Number</label> <br>
+                            <input id="cellpohne" type="number" placeholder="ex. 09*********" name="cellphoneNum" required>
                         </div> 
                         <div>
-                            <label for="telephone">Telephone</label> <br>
-                            <input id="telepohne" type="number" placeholder="ex. (02) 123 4567" required>
+                            <label for="telephone">Telephone Number</label> <br>
+                            <input id="telepohne" type="number" placeholder="ex. (02) 123 4567" name="telphoneNum" required>
                         </div> 
                         <div>
                             <label for="p-mail">Primary Email Address</label> <br>
-                            <input id="p-email" type="email" placeholder="ex. samplename.gmail.com" required>
+                            <input id="p-email" type="email" placeholder="ex. samplename.gmail.com" name="email" required>
                         </div>
                         <div>
                             <label for="s-mail">Secondary Email Address</label> <br>
-                            <input id="s-email" type="email" placeholder="ex. samplename.gmail.com" required>
+                            <input id="s-email" type="email" placeholder="ex. samplename.gmail.com" name="email2" required>
                         </div><br>
+                    </div>
+
+                    <h4>Emergency Contact</h4>
+                    <div class="emergency-contact-section">
+                        <div>
+                            <label for="contactPersonF">First Name</label>
+                            <input type="text" id="contactPersonF" name="contactPersonF">
+                        </div>
+
+                        <div>
+                            <label for="contactPersonL">Last Name</label>
+                            <input type="text" id="contactPersonL" name="contactPersonL">
+                        </div>
+
+                        <div>
+                            <label for="contactNum">Contact Number</label>
+                            <input type="text" id="contactNum" name="contactNum" placeholder="09*********">
+                        </div>
                     </div>
 
                     <h4>Requirement Submission Bin</h4>
                     <label class="submission" for="fileReq">Add/Drop items here....</label>
-                    <input id="fileReq" type="file" required>
+                    <input type="file" id="fileReq" name="requirements" accept="application/pdf" required>
                     
                     <div class="lowertButtons">
                         <button class="back-button"><a href="../HTML/Requirements.html">&lt</a></button>
-                        <button class="next-button"type="button" onclick="alert('Form submitted successfully!')">Submit Now</button>
+                        <input type="submit" value="Submit Now" name="submit">
                     </div>
                 </fieldset>
             </form>
