@@ -2,6 +2,7 @@
     include 'connectDB.php'; // connection to database
     $showMessageOnly = $_GET['success'] ?? null;
     $errorMessage = "";
+    $isReapplication = false;
 
     if(isset($_POST['submit'])) {
         $lastName = mysqli_real_escape_string($conn, $_POST['lname']);
@@ -32,6 +33,24 @@
         $status = "pending"; // default status for applicant
         $entryYear = date("Y");
 
+        $uploadDir = 'requirement_file/';
+        $uploadReqFile = $uploadDir . basename($_FILES['requirements']['name']);
+        $imageFileType = strtolower(pathinfo($uploadReqFile, PATHINFO_EXTENSION));
+        $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
+
+        if (in_array($imageFileType, $allowedTypes)) {
+            if (move_uploaded_file($_FILES['requirements']['tmp_name'], $uploadReqFile)) {
+            } else {
+                $errorMessage = "Error uploading the file.";
+                header("Location: ".$_SERVER['PHP_SELF']."?success=2&msg=" . urlencode($errorMessage));
+                exit;
+            }
+        } else {
+            $errorMessage = "Invalid file type. Only JPG, PNG, GIF, and PDF are allowed.";
+            header("Location: ".$_SERVER['PHP_SELF']."?success=2&msg=" . urlencode($errorMessage));
+            exit;
+        }
+
         $checkStudentQuery = "SELECT status FROM dormer WHERE studentNumber = ?";
         $stmtCheckStudent = mysqli_prepare($conn, $checkStudentQuery);
         mysqli_stmt_bind_param($stmtCheckStudent, "s", $studentNum);
@@ -40,19 +59,25 @@
     
         if (mysqli_stmt_fetch($stmtCheckStudent)) {
             mysqli_stmt_close($stmtCheckStudent);
-    
-            if ($existingStatus == 'Pending') {
-                $errorMessage = "You have already submitted your application (status: Pending).";
-            } elseif ($existingStatus == 'Active') {
-                $errorMessage = "You are already an active dormer.";
-            } else {
-                $errorMessage = "You already exist in the database with status: $existingStatus.";
-            }
 
-            header("Location: ".$_SERVER['PHP_SELF']."?success=2&msg=" . urlencode($errorMessage));
-            exit;
+            if ($existingStatus === 'Pending') {
+                $errorMessage = "You have already submitted your application (status: Pending).";
+                header("Location: ".$_SERVER['PHP_SELF']."?success=2&msg=" . urlencode($errorMessage));
+                exit;
+            } elseif ($existingStatus === 'Active') {
+                $errorMessage = "You are already an active dormer.";
+                header("Location: ".$_SERVER['PHP_SELF']."?success=2&msg=" . urlencode($errorMessage));
+                exit;
+            } elseif ($existingStatus === 'Evicted') {
+                $errorMessage = "You are no longer eligible to apply (status: Evicted).";
+                header("Location: ".$_SERVER['PHP_SELF']."?success=2&msg=" . urlencode($errorMessage));
+                exit;
+            } else {
+                $isReapplication = true;
+            }
         } else {
-            mysqli_stmt_close($stmtCheckStudent); // close in case no record found
+            mysqli_stmt_close($stmtCheckStudent); 
+            $isReapplication = false; // this is a new applicant
         }
 
         $checkAddressQuery = "SELECT addressID FROM address WHERE country = ? AND region = ? AND city = ? AND barangay = ? AND 
@@ -122,16 +147,51 @@
             exit;
         }
 
-        $insertDormerQuery = "INSERT INTO dormer (studentNumber, status, dormerSurname, dormerFirstname, dormerMiddlename, 
-                                    dormerNameExtension, gender, birthday, collegeDept, degreeProg, yearLevel, addressID, cellphoneNumber, 
-                                    telephoneNumber, primaryEmailAdd, secondEmailAdd, dormEntryYear, contactID)
-                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        if ($isReapplication) {
+            // Fetch old status and requirements before update
+            $fetchOldQuery = "SELECT status, requirements FROM dormer WHERE studentNumber = ?";
+            $stmtFetchOld = mysqli_prepare($conn, $fetchOldQuery);
+            mysqli_stmt_bind_param($stmtFetchOld, "s", $studentNum);
+            mysqli_stmt_execute($stmtFetchOld);
+            mysqli_stmt_bind_result($stmtFetchOld, $oldStatus, $oldRequirements);
 
-        $stmtInsert = mysqli_prepare($conn, $insertDormerQuery);
-        mysqli_stmt_bind_param($stmtInsert, "sssssssssssissssii", $studentNum, $status, $lastName, $firstName, $middleName, $nameExtension,
-            $gender, $birthday, $colDept, $degProg, $yearLevel, $addressID, $cellNum, $telNum, $email, $secondEmail, $entryYear, $contactID);
-        mysqli_stmt_execute($stmtInsert);
-        mysqli_stmt_close($stmtInsert);    
+            if (mysqli_stmt_fetch($stmtFetchOld)) {
+                mysqli_stmt_close($stmtFetchOld);
+
+                // Insert into history table
+                $insertHistoryQuery = "INSERT INTO dormer_history (studentNumber, status, requirements) VALUES (?, ?, ?)";
+                $stmtHistory = mysqli_prepare($conn, $insertHistoryQuery);
+                mysqli_stmt_bind_param($stmtHistory, "sss", $studentNum, $oldStatus, $oldRequirements);
+                mysqli_stmt_execute($stmtHistory);
+                mysqli_stmt_close($stmtHistory);
+            } else {
+                mysqli_stmt_close($stmtFetchOld);
+            }
+
+            $updateQuery = "UPDATE dormer 
+                            SET status = ?, dormerSurname = ?, dormerFirstname = ?, dormerMiddlename = ?, dormerNameExtension = ?, gender = ?, 
+                                birthday = ?, collegeDept = ?, degreeProg = ?, yearLevel = ?, addressID = ?, cellphoneNumber = ?, 
+                                telephoneNumber = ?, primaryEmailAdd = ?, secondEmailAdd = ?, dormEntryYear = ?, contactID = ?, requirements = ?
+                            WHERE studentNumber = ?";
+            $stmtUpdate = mysqli_prepare($conn, $updateQuery);
+            mysqli_stmt_bind_param($stmtUpdate, "ssssssssssissssiiss", $status, $lastName, $firstName, $middleName, $nameExtension,
+                $gender, $birthday, $colDept, $degProg, $yearLevel, $addressID, $cellNum, $telNum, $email, $secondEmail, $entryYear, 
+                $contactID, $uploadReqFile, $studentNum);
+            mysqli_stmt_execute($stmtUpdate);
+            mysqli_stmt_close($stmtUpdate);
+        } else {
+            $insertDormerQuery = "INSERT INTO dormer (studentNumber, status, dormerSurname, dormerFirstname, dormerMiddlename, 
+                                    dormerNameExtension, gender, birthday, collegeDept, degreeProg, yearLevel, addressID, cellphoneNumber, 
+                                    telephoneNumber, primaryEmailAdd, secondEmailAdd, dormEntryYear, contactID, requirements)
+                                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            $stmtInsert = mysqli_prepare($conn, $insertDormerQuery);
+            mysqli_stmt_bind_param($stmtInsert, "sssssssssssissssiis", $studentNum, $status, $lastName, $firstName, $middleName, $nameExtension,
+                $gender, $birthday, $colDept, $degProg, $yearLevel, $addressID, $cellNum, $telNum, $email, $secondEmail, $entryYear, $contactID, 
+                $uploadReqFile);
+            mysqli_stmt_execute($stmtInsert);
+            mysqli_stmt_close($stmtInsert);
+        }   
         
         header("Location: ".$_SERVER['PHP_SELF']."?success=3");
         exit;
@@ -280,13 +340,13 @@
 
                 <!-- Contact person for mergencies -->
                 <label for="contactPersonF">First Name</label>
-                <input type="text" id="contactPersonF" name="contactPersonF">
+                <input type="text" id="contactPersonF" name="contactPersonF" required>
 
                 <label for="contactPersonL">Last Name</label>
-                <input type="text" id="contactPersonL" name="contactPersonL">
+                <input type="text" id="contactPersonL" name="contactPersonL" required>
 
                 <label for="contactNum">Contact Number</label>
-                <input type="text" id="contactNum" name="contactNum" placeholder="09*********">
+                <input type="text" id="contactNum" name="contactNum" placeholder="09*********" required>
 
                 <label for="requirements">Requirement Submission Bin</label>
                 <input type="file" id="requirements" name="requirements" accept="application/pdf" required>
