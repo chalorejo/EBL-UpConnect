@@ -212,7 +212,7 @@
         <?php elseif ($showMessageOnly == 2 && isset($_GET['msg'])): ?>
             <div class="error-box">
                 <?php echo htmlspecialchars($_GET['msg']); ?>
-                <a href="home.html">Go back to Home Page</a> <!--link to go back to home  -->
+                <a href="../HTML/index.html">Go back to Home Page</a> <!--link to go back to home  -->
             </div>
         <?php else: ?>
             <form action="" method="POST">
