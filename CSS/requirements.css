@@ -5,7 +5,7 @@
     position: relative;
     height: auto;
     margin-top: -10px;
-    background-image: url('https://i.ibb.co/H4fR1rL/WEBSITE-DESIGN-1.png');
+    background-image: url('https://i.ibb.co/9mrJVVB4/bg-ebl.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -22,13 +22,13 @@
 }
   
 .info {
-    background: rgba(255, 255, 255, 0.9); /* Light background with transparency */
-    border-radius: 12px;                  /* Rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    padding: 30px;                        /* Inner spacing */
-    max-width: 1200px;                     /* Optional width limit */
-    margin: 40px auto;                    /* Center the box */
-    backdrop-filter: blur(8px);          /* Optional: glass effect */
+    background: rgba(255, 255, 255, 0.237); 
+    border-radius: 12px;                  
+    box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.401); 
+    padding: 30px;                     
+    max-width: 1200px;                   
+    margin: 40px auto;                    
+    backdrop-filter: blur(8px);          
     
 }
 
@@ -37,17 +37,24 @@
     margin-bottom: 40px;
 }
 
-.ReqBold, h3 {
+h3 {
     font-weight: bold;
-    color: #273811;
+    color: #00573F;
+}
+
+.ReqBold{
+    font-weight: bold;
+    color: #282c32;
 }
 
 h3{
     text-align: center;
+    font-family: 'Optima';
+    font-weight: normal;
 }
 
 .ReqIndent {
-    color: #273811;
+    color: #282c32;
     text-indent: 25px;
 }
 
@@ -71,22 +78,6 @@ p, ol, ul {
 
 .second {
     text-align: justify;
-}
-
-button-1 {
-    font-size: 40px;
-    font-weight: bold;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background-color: gray;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0;
 }
 
 .lowertButtons {
@@ -127,15 +118,65 @@ h3::after {
     display: none;
 }
 
-
-button a {
-    text-decoration: none;
-    color: white;
-}
-
 .image-for-application {
     height: 60%;
     margin-bottom: -10px;
 }
 
+/* Navigation Button Styling */
+.lower-Buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.back, .sub {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    min-width: 60px;
+    min-height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.back {
+    margin-left: 50px;
+    background-color: #666666;
+}
+
+.sub {
+    background-color: #00573F;
+}
+
+.back:hover{
+    background-color: #00573F;
+}
+
+.sub:hover{
+    background-color: #02241a;
+}
+
+.continue-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.continue {
+    font-size: 1.1rem;
+    color: #00573F;
+}
+
+/* Link Styling Inside Buttons */
+button a {
+    text-decoration: none;
+    color: white;
+}
 
