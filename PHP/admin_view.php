@@ -26,6 +26,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin View</title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../CSS/admin_view.css">
+    <link rel="stylesheet" href="../CSS/navigation_bar.css">
+
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
+
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
     <?php if (isset($_GET['updated']) && $_GET['updated'] == 1): ?>
@@ -39,73 +52,88 @@
             }
         </script>
     <?php endif; ?>
-
-    <h2><a href="admin_view.php">Student Records</a></h2>
-
-    <a href="logout_process.php">Log Out</a> <!-- sa upper rightmost ni sya dapat or kung asa nimo ibutang -->
-        <!-- once i click kay sa log in page sa sya ma redirect, pero mas better ata kung sa may home/index -->
     
-    <?php include 'search_bar.php'; ?> <!-- the search bar here... -->
+    <!-- NAVBAR-->   
+    <div class="header">
+        <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
+        <div class="university-text">
+            <p class="up">University of the Philippines</p>
+            <p id="down">MINDANAO</p>
+        </div>
+        
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="../PHP/admin_view.php">Student Records</a></li>
+                <li><a href="../PHP/logout_process.php">Log Out</a></li>
+                <li class="search-bar">
+                    <?php include 'search_bar.php'; ?>
+                </li>
+            </ul>
+        </nav>
+    </div><br><br><br><br><br><br><br><br>
+<!--NAVBAR-->
 
     <?php if ($noResults): ?>
         <p>No matching records found for "<?php echo htmlspecialchars($search); ?>".</p>
         <a href="admin_view.php" class="back">← Go Back</a> <!-- Ikaw na bahala sa words diri -->
     <?php else: ?>
-        <table>
-            <tr>
-                <th>Student Number</th>
-                <th>Status</th>
-                <th>Surname</th>
-                <th>First Name</th>
-                <th>Middle Name</th>
-                <th>Name Extension</th>
-                <th>Gender</th>
-                <th>Birthday</th>
-                <th>Address</th>
-                <th>College/Department</th>
-                <th>Degree Program</th>
-                <th>Year Level</th>
-                <th>Cellphone Number</th>
-                <th>Telephone Number</th>
-                <th>Primary Email Address</th>
-                <th>Secondary Email Address</th>
-                <th>Contact Person</th>
-                <th>Emergency Contact Number</th>
-                <th>Dorm Entry Year</th>
-                <th>Dorm Exit Year</th>
-                <th>Records</th>
-            </tr>
-            <?php while($row = mysqli_fetch_assoc($result)) { ?>
-                <tr>
-                    <td><?php echo $row['studentNumber']; ?></td>
-                    <td><?php echo $row['status']; ?></td>
-                    <td><?php echo $row['dormerSurname']; ?></td>
-                    <td><?php echo $row['dormerFirstname']; ?></td>
-                    <td><?php echo $row['dormerMiddlename']; ?></td>
-                    <td><?php echo $row['dormerNameExtension']; ?></td>
-                    <td><?php echo $row['gender']; ?></td>
-                    <td><?php echo $row['birthday']; ?></td>
-                    <td><?php echo $row['lotNumber_Prk'] . ', ' . $row['subdivision_Street'] . ', ' . $row['barangay'] . ', ' . $row['city'] . 
-                            ', ' . $row['region'] . ', ' . $row['country'] . ', ' . $row['zipCode']; ?></td>
-                    <td><?php echo $row['collegeDept']; ?></td>
-                    <td><?php echo $row['degreeProg']; ?></td>
-                    <td><?php echo $row['yearLevel']; ?></td>
-                    <td><?php echo $row['cellphoneNumber']; ?></td>
-                    <td><?php echo $row['telephoneNumber']; ?></td>
-                    <td><?php echo $row['primaryEmailAdd']; ?></td>
-                    <td><?php echo $row['secondEmailAdd']; ?></td>
-                    <td><?php echo $row['contactFirstName'] . ' ' . $row['contactLastName']; ?></td>
-                    <td><?php echo $row['contactNumber']; ?></td>
-                    <td><?php echo $row['dormEntryYear']; ?></td>
-                    <td><?php echo $row['dormExitYear']; ?></td>
-                    <td class="action">
-                        <a href="view_payments.php?studentNumber=<?php echo $row['studentNumber']; ?>">Payments</a>
-                        <a href="view_permits.php?studentNumber=<?php echo $row['studentNumber']; ?>">Permits</a>
-                        <a href="update_dormer_information.php?studentNumber=<?php echo $row['studentNumber']; ?>">Update</a>
-                    </td>
+        <div clas="table-container">
+            <table>
+                <tr class="table-header">
+                    <th>Student Number</th>
+                    <th>Status</th>
+                    <th>Surname</th>    
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Name Extension</th>
+                    <th>Gender</th>
+                    <th>Birthday</th>
+                    <th>Address</th>
+                    <th>College/Department</th>
+                    <th>Degree Program</th>
+                    <th>Year Level</th>
+                    <th>Cellphone Number</th>
+                    <th>Telephone Number</th>
+                    <th>Primary Email Address</th>
+                    <th>Secondary Email Address</th>
+                    <th>Contact Person</th>
+                    <th>Emergency Contact Number</th>
+                    <th>Dorm Entry Year</th>
+                    <th>Dorm Exit Year</th>
+                    <th>Records</th>
                 </tr>
-            <?php } ?>
-        </table>
+                <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                    <tr>
+                        <td><?php echo $row['studentNumber']; ?></td>
+                        <td><?php echo $row['status']; ?></td>
+                        <td><?php echo $row['dormerSurname']; ?></td>
+                        <td><?php echo $row['dormerFirstname']; ?></td>
+                        <td><?php echo $row['dormerMiddlename']; ?></td>
+                        <td><?php echo $row['dormerNameExtension']; ?></td>
+                        <td><?php echo $row['gender']; ?></td>
+                        <td><?php echo $row['birthday']; ?></td>
+                        <td><?php echo $row['lotNumber_Prk'] . ', ' . $row['subdivision_Street'] . ', ' . $row['barangay'] . ', ' . $row['city'] . 
+                                ', ' . $row['region'] . ', ' . $row['country'] . ', ' . $row['zipCode']; ?></td>
+                        <td><?php echo $row['collegeDept']; ?></td>
+                        <td><?php echo $row['degreeProg']; ?></td>
+                        <td><?php echo $row['yearLevel']; ?></td>
+                        <td><?php echo $row['cellphoneNumber']; ?></td>
+                        <td><?php echo $row['telephoneNumber']; ?></td>
+                        <td><?php echo $row['primaryEmailAdd']; ?></td>
+                        <td><?php echo $row['secondEmailAdd']; ?></td>
+                        <td><?php echo $row['contactFirstName'] . ' ' . $row['contactLastName']; ?></td>
+                        <td><?php echo $row['contactNumber']; ?></td>
+                        <td><?php echo $row['dormEntryYear']; ?></td>
+                        <td><?php echo $row['dormExitYear']; ?></td>
+                        <td class="action">
+                            <a href="view_payments.php?studentNumber=<?php echo $row['studentNumber']; ?>">Payments</a>
+                            <a href="view_permits.php?studentNumber=<?php echo $row['studentNumber']; ?>">Permits</a>
+                            <a href="update_dormer_information.php?studentNumber=<?php echo $row['studentNumber']; ?>">Update</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
     <?php endif; ?>
 
     <?php mysqli_close($conn); ?>

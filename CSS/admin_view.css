@@ -1,0 +1,152 @@
+body {
+    font-family: 'PT Serif', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.search-bar{
+    margin: 0;
+    padding: 0;
+}
+
+.table-container {
+    overflow-x: auto;
+    max-height: 80vh;
+    margin: 20px;
+    border: 1px solid #ccc;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 1500px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    white-space: nowrap;
+}
+
+/* Sticky header */
+.table-header th {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 2;
+}
+
+/* Sticky left columns: Student Number and Status */
+tr td:nth-child(1),
+tr td:nth-child(2),
+.table-header th:nth-child(1),
+.table-header th:nth-child(2) {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #f9f9f9;
+}
+
+
+/* Offset second sticky column */
+tr td:nth-child(2),
+.table-header th:nth-child(2) {
+    left: 120px; /* approximate width of column 1 */
+}
+
+/* Sticky right column: Action */
+tr td:last-child,
+.table-header th:last-child {
+    position: sticky;
+    right: 0;
+    background-color: #f9f9f9;
+    z-index: 1;
+}
+
+/* Action links styling */
+td.action a {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 4px 8px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+td.action a:hover {
+    background-color: #45a049;
+}
+
+/* Optional: Add hover highlight */
+tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* Sticky top row */
+.table-header th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #f2f2f2;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    position: sticky;
+    left: 0;
+    width: 300px; /* fixed width */
+    min-width: 150px;   
+    z-index: 5;
+    background-color: #f9f9f9;
+
+}
+
+td:nth-child(1){
+    min-width: 300px; 
+}
+
+/* Sticky left - Status (next to Student Number, no gap) */
+th:nth-child(2),
+td:nth-child(2) {
+    position: sticky;
+    left: 150px; /* exactly equal to the width of the first column */
+    z-index: 5;
+    background-color: #f9f9f9;
+}
+
+/* Sticky right column - Records */
+th:last-child,
+td:last-child {
+    position: sticky;
+    right: 0;
+    z-index: 5;
+    background-color: #f9f9f9;
+    min-width: 250px; /* Adjust if needed for buttons/links */
+    max-width: 250px;
+}
+
+/* Optional: Style the records links/buttons */
+td:last-child a {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 4px 8px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+td:last-child a:hover {
+    background-color: #388e3c;
+}
+
+/* Optional: Row hover effect */
+tr:hover td {
+    background-color: #f1f1f1;
+}
+

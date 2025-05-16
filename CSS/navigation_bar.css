@@ -13,9 +13,6 @@
     margin-left: 2%;
 }
 
-#homeLogo:hover{
-    cursor: pointer;
-}
   
 .header {
     position: fixed;
