@@ -41,12 +41,15 @@
     <?php endif; ?>
 
     <h2><a href="admin_view.php">Student Records</a></h2>
+
+    <a href="logout_process.php">Log Out</a> <!-- sa upper rightmost ni sya dapat or kung asa nimo ibutang -->
+        <!-- once i click kay sa log in page sa sya ma redirect, pero mas better ata kung sa may home/index -->
     
     <?php include 'search_bar.php'; ?> <!-- the search bar here... -->
 
     <?php if ($noResults): ?>
         <p>No matching records found for "<?php echo htmlspecialchars($search); ?>".</p>
-        <a href="admin_view.php" class="back">← Go Back</a> <!-- Ikaw na bahala sa words diri, diri sad if naa pakay i add lain when walay magmatch for thats search -->
+        <a href="admin_view.php" class="back">← Go Back</a> <!-- Ikaw na bahala sa words diri -->
     <?php else: ?>
         <table>
             <tr>
