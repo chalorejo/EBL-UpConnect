@@ -12,7 +12,7 @@ body{
     height: 410px;
 }
 .bgshade {
-    background-image: url('https://i.ibb.co/H4fR1rL/WEBSITE-DESIGN-1.png');
+    background-image: url('https://i.ibb.co/9mrJVVB4/bg-ebl.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -29,27 +29,39 @@ form {
 }
 
 fieldset {
-    background-color: rgba(255, 255, 255, 0.96);
-    border-radius: 20px;
-    border: 2px solid #d1d1d1;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    padding: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.416); 
+    border-radius: 12px;                  
+    box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.401); 
+    padding: 30px;                     
+    max-width: 1200px;                   
+    margin: 40px auto;                    
+    backdrop-filter: blur(8px);          
 }
 
 h3 {
-    font-size: 2rem;
-    color: #2e5e2e;
-    margin-bottom: 10px;
+    font-size: 3rem;
+    color: #00573F;
+    margin-bottom: 40px;
+    font-family: 'Optima';
+    font-weight: normal;
+    text-align: center;
 }
 
 h4 {
-    font-size: 1.5rem;
-    color: #35523d;
+    font-size: 2.2rem;
+    color: #00573F;
     margin: 40px 0 20px;
+    font-family: 'Optima';
+    font-weight: normal;
     text-align: center;
     position: relative;
 }
 
+.important-note{
+    color: #54595F;
+    margin-bottom: 70px;
+}
 label {
     font-weight: 600;
     font-size: 0.95rem;
@@ -66,10 +78,10 @@ input[type=date],
 select {
     width: 100%;
     max-width: 300px;
-    padding: 10px 5px;
+    padding: 5px 5px;
     margin-bottom: 20px;
     border: none;
-    border-bottom: 2px solid #4CAF50;
+    border-bottom: 2px solid #6d7573;
     background: transparent;
     font-size: 1rem;
     transition: border-color 0.3s;
@@ -77,7 +89,7 @@ select {
 
 input:focus,
 select:focus {
-    border-bottom: 2px solid #2e7d32;
+    border-bottom: 2px solid #00aa7a;
     outline: none;
 }
 
@@ -129,24 +141,33 @@ input[type="file"] {
     display: none;
 }
 
-/* Buttons */
-.lowertButtons {
+/* Navigation Button Styling */
+.lower-Buttons {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    align-items: center;
+    margin-top: 50px;
 }
 
-.back-button + .next-button {
-    background-color: #4CAF50;
+.back{
     color: white;
-    padding: 10px 25px;
+    font-size: 2rem;
+    font-weight: bold;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 50%;
+    min-width: 60px;
+    min-height: 60px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
 }
 
-.back-button:hover {
-    background-color: #2e7d32;
+.back {
+    background-color: #666666;
+}
+
+.back:hover{
+    background-color: #00573F;
 }
