@@ -46,6 +46,41 @@
 <head>
     <meta charset="UTF-8">
     <title>Permit Records - <?php echo htmlspecialchars($studentNumber); ?></title>
+    <style>
+        table, th, td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        a.back {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        a.back:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <a href="admin_view.php" class="back">← Back to Admin View</a> <!-- Ikaw na bahala asa nimo ni ibutang dapit -->
@@ -59,6 +94,7 @@
             <th rowspan="2">Permit Type</th>
             <th colspan="2">Dates</th>
             <th rowspan="2">Reason</th>
+            <th rowspan="2">Sign</th>
         </tr>
         <tr>
             <th>From</th>
@@ -66,7 +102,7 @@
         </tr>
         <?php if (count($rows) === 0): ?>
             <tr>
-                <td colspan="5">No payment records found</td>
+                <td colspan="6">No payment records found</td>
             </tr>
         <?php else: ?>
             <?php foreach ($rows as $row) {
@@ -76,10 +112,35 @@
                     echo "<td>" . $row['fromDate'] . "</td>";
                     echo "<td>" . $row['toDate'] . "</td>";
                     echo "<td>" . $row['Reason'] . "</td>";
+                    echo "<td>";
+                        if (!empty($row['signPath']) && file_exists($row['signPath'])) {
+                            $filename = basename($row['signPath']);
+                            echo '<a href="#" onclick="openModal(\'' . htmlspecialchars($row['signPath']) . '\'); return false;">' . htmlspecialchars($filename) . '</a>';
+                        } else {
+                            echo "No Image";
+                        }
+                    echo "</td>";
                 echo "</tr>";
             } ?>
         <?php endif; ?>
     </table>
 
+    <!-- Girllll kini na style for this para mugana tong effect na pina google drive -->
+    <div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+        <span onclick="closeModal()" style="position:absolute; top:20px; right:30px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+        <img id="modalImage" src="" style="max-width:90%; max-height:90%;">
+    </div>
+
 </body>
+
+<script>
+    function openModal(imagePath) {
+        document.getElementById('modalImage').src = imagePath;
+        document.getElementById('imageModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+</script>
 </html>
