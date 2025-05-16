@@ -198,16 +198,30 @@
                 </select>
 
                 <label for="degProg">Course</label>
-                <input type="text" name="degProg" id="degProg" required>
+                <select name="degProg" id="course" required>
+                    <option value="" disabled selected>Choose your department</option>
+                    <option value="AASS">AA Sports Studies</option>
+                    <option value="BACMA">BA Communications and Multimedia Arts</option>
+                    <option value="BAE">BA English</option>
+                    <option value="BSAE">BS Agribusiness Economics</option>
+                    <option value="BSAnthro">BS Anthropology</option>
+                    <option value="BSAM">BS Applied Mathematics</option>
+                    <option value="BSArchi">BA Architechture</option>
+                    <option value="BSB">BS Biology</option>
+                    <option value="BSCS">BS Computer Science</option>
+                    <option value="BSDS">BS Data Science</option>
+                    <option value="BSFT">BS Food Technology</option>
+                    <option value="BSSS">BS Sports Sciences</option> 
+                </select>
 
                 <label for="year">Year</label>
                 <select name="year" id="year" required>
                     <option value="" disabled selected>Year level</option>
-                    <option value="1">1st Year</option>
-                    <option value="2">2nd Year</option>
-                    <option value="3">3rd Year</option>
-                    <option value="4">4th Year</option>
-                    <option value="5">5th Year</option>
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
+                    <option value="4th">4th Year</option>
+                    <option value="5th">5th Year</option>
                 </select>
 
                 <!-- Permanent Address -->

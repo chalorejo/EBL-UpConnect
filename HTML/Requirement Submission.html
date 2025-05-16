@@ -57,63 +57,65 @@
                     <div class="student-info-section">
                         <div>
                             <label for="fname">First Name</label> <br>
-                            <input id="fname" type="text" placeholder="ex. John" required>
+                            <input id="fname" type="text" placeholder="ex. John" name="fname" required>
                         </div>
                         <div>
                             <label for="lname">Last Name</label> <br>
-                            <input id="lname" type="text" placeholder="ex. Doe" required>
+                            <input id="lname" type="text" placeholder="ex. Doe" name="lname" required>
                         </div>
                         <div>
                             <label for="mname">Middle Name</label> <br>
-                            <input id="mname" type="text" placeholder="ex. Dave">
+                            <input id="mname" type="text" placeholder="ex. Dave" name="mname">
                         </div>
                         <div>
                             <label for="suffix">Suffix</label> <br>
-                            <input id="suffix" type="text" placeholder="ex. Jr., if none leave blank">
+                            <input id="suffix" type="text" placeholder="ex. Jr., if none leave blank" name="ename">
                         </div>
                         <div>
                             <label for="birthdate">Date of Birth</label> <br>
-                            <input id="birthdate" type="date" placeholder="ex. YYYY/MM/DD" required>
+                            <input id="birthdate" type="date" placeholder="ex. YYYY/MM/DD" name="birthdate" required>
                         </div>
                         <div>
                             <label for="gender">Sex assigned at Birth</label> <br>
                                     <select name="gender" id="gender">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
                                     </select>
                         </div>
                         <div>
                             <label for="student-no">Student Number</label> <br>
-                            <input id="student-no" type="number" placeholder="ex. 2024-XXXXX" required>
+                            <input id="student-no" type="number" placeholder="ex. 2024-XXXXX" name="studentNum" required pattern="^\d{4}-\d{5}$">
                         </div>
                         <div>
                             <label for="department">Department</label> <br>
                                     <select name="department" id="department">
-                                        <option value="architecture">Architecture</option>
-                                        <option value="human-kinetics">Human Kinetics</option>
-                                        <option value="humanities">Humanities</option>
-                                        <option value="management">Management</option>
-                                        <option value="social-sciences">Social Sciences</option>
+                                        <option value="" disabled selected>Choose your department</option>
+                                        <option value="Architecture">Architecture</option>
+                                        <option value="Human Kinetics">Human Kinetics</option>
+                                        <option value="Humanities">Humanities</option>
+                                        <option value="Social Science">Social Science</option>
                                         <option value="DBSES">Biological Sciences and Environmental Studies</option>
                                         <option value="DMPCS">Mathematics, Physics, and Computer Science</option>
-                                        <option value="DFSC" >Food Science and Chemistry</option>
+                                        <option value="DFSC">Food Science and Chemistry</option>
+                                        <option value="Management">Management</option>
                                     </select>
                         </div>
                         <div>
                             <label for="course">Course</label> <br>
-                                    <select name="course" id="course" required>
-                                        <option value="aass">AA Sports Studies</option>
-                                        <option value="bacma">BA Anthropology</option>
-                                        <option value="bacma">BA Architechture</option>
-                                        <option value="bacma">BA Communications and Multimedia Arts</option>
-                                        <option value="bacma">BA English</option>
-                                        <option value="bsae">BS Agribusiness Economics</option>
-                                        <option value="bsam">BS Applied Mathematics</option>
-                                        <option value="bsb">BS Biology</option>
-                                        <option value="bscs">BS Computer Science</option>
-                                        <option value="bsds">BS Data Science</option>
-                                        <option value="bsft">BS Food Technology</option>
-                                        <option value="bsss">BS Sports Sciences</option> 
+                                    <select name="degProg" id="course" required>
+                                        <option value="" disabled selected>Choose your department</option>
+                                        <option value="AASS">AA Sports Studies</option>
+                                        <option value="BACMA">BA Communications and Multimedia Arts</option>
+                                        <option value="BAE">BA English</option>
+                                        <option value="BSAE">BS Agribusiness Economics</option>
+                                        <option value="BSAnthro">BS Anthropology</option>
+                                        <option value="BSAM">BS Applied Mathematics</option>
+                                        <option value="BSArchi">BA Architechture</option>
+                                        <option value="BSB">BS Biology</option>
+                                        <option value="BSCS">BS Computer Science</option>
+                                        <option value="BSDS">BS Data Science</option>
+                                        <option value="BSFT">BS Food Technology</option>
+                                        <option value="BSSS">BS Sports Sciences</option> 
                                     </select>
                         </div>
                         <div>
