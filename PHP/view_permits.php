@@ -102,7 +102,7 @@
         </tr>
         <?php if (count($rows) === 0): ?>
             <tr>
-                <td colspan="6">No payment records found</td>
+                <td colspan="6">No permit records found</td>
             </tr>
         <?php else: ?>
             <?php foreach ($rows as $row) {
