@@ -171,3 +171,29 @@ input[type="file"] {
 .back:hover{
     background-color: #00573F;
 }
+
+.submit-now {
+    color: #00573F;
+    font-size: 1.25rem;
+    min-width: 175px;
+    min-height: 45px;
+    font-weight: 600;
+    border: 2px solid #00573F;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-now:hover {
+    background-color: #00573F;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 87, 63, 0.3);
+}
+
+.submit-now:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 6px rgba(0, 87, 63, 0.2);
+}
+
