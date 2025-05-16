@@ -176,6 +176,7 @@
                     <option value="Active" <?php if($row['status'] === 'Active') echo 'selected'; ?>>Active</option>
                     <option value="Evicted" <?php if($row['status'] === 'Evicted') echo 'selected'; ?>>Evicted</option>
                     <option value="Pending" <?php if($row['status'] === 'Pending') echo 'selected'; ?>>Pending</option>
+                    <option value="Reject" <?php if($row['status'] === 'Reject') echo 'selected'; ?>>Reject</option>
                     <option value="Withdrawn" <?php if($row['status'] === 'Withdrawn') echo 'selected'; ?>>Withdrawn</option>
                 </select>
             </div>
