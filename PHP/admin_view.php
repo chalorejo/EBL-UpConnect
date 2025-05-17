@@ -73,6 +73,7 @@
                 <th>Dorm Entry Year</th>
                 <th>Dorm Exit Year</th>
                 <th>Records</th>
+                <th>Requuirement File</th>
             </tr>
             <?php while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr>
