@@ -163,12 +163,45 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Update</title>
+
+        <link rel="stylesheet" href="../CSS/Requirement_Submission.css">
+        <link rel="stylesheet" href="../CSS/navigation_bar.css">
+        <link rel="stylesheet" href="../CSS/footer.css">
+        <link rel="stylesheet" href="../CSS/update_dormer_information.css">
+
+        <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <h2>Dormer Information</h2>
         <p>Student Number: <strong><?php echo htmlspecialchars($row['studentNumber']); ?></strong></p>
 
+        <!-- NAVBAR-->   
+        <div class="header">
+            <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
+            <div class="university-text">
+                <p class="up">University of the Philippines</p>
+                <p id="down">MINDANAO</p>
+            </div>
+            
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="../PHP/admin_view.php">Student Records</a></li>
+                    <li><a href="../PHP/dormer_history.php">Dormer History</a></li>
+                    <li><a href="../PHP/logout_process.php">Log Out</a></li>
+
+                </ul>
+            </nav>
+        </div>
+         <!--IMAGE-->
+                <div class="image-for-application"></div>
+            <!--IMAGE-->
+    <!--NAVBAR-->
         <!-- Basic Information -->
+        <div class="bgshade"> 
+        <div class="req-about">
+            <h3>Update Dormer Information</h3>
         <form action="" method="POST" id="updateForm">
             <div>
                 <label for="status">Status</label>
@@ -344,10 +377,13 @@
                 <input type="text" id="contactNum" name="contactNum" value="<?php echo htmlspecialchars($row['contactNumber']); ?>">
             </div>
 
-            <a href="admin_view.php"><</a> <!-- like button to go back sa admin_view, i-kinda same tong button anto last time -->
-
-            <input type="submit" value="Update" name="submit" onclick="confirmUpdate()">
+            <div class="lower-Buttons">
+                <a class="back" href="../PHP/admin_view.php"><i class="fa-solid fa-arrow-left"></i></a>
+                <input class="submit-now" type="submit" value="Update" name="submit" onclick="confirmUpdate()">
+            </div>
         </form>
+        </div>
+        </div>
 
         <script>
             function confirmUpdate() {
