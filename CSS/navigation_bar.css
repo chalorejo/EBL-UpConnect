@@ -110,7 +110,8 @@ div p {
 }
 
   
-a {
+.university-brand {
+    all: unset;
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
@@ -125,4 +126,7 @@ a {
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-
+/* Add this new rule to target the logo link specifically */
+.header a[href="../PHP/admin_login.php"] {
+    margin-left: 100px; /* Adjust this value as needed */
+}

@@ -15,19 +15,10 @@
     gap: 1rem; /* Add some space between rows on smaller screens */
     margin-bottom: 50px;
 }
-  
-a .box {
-    background: #fff;
-    border: 4px solid #b8b8b8;
-    border-radius: 5%;
-    width: 22%; /* Adjust width to fit 4 boxes in one row */
-    min-width: 200px; /* Set a minimum width to prevent boxes from shrinking too much */
-    text-align: center;
-    overflow: hidden;
-    box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.062); 
-    transition: transform 0.3s ease, border-color 0.3s ease;
+a {
+    all: unset;
+    text-decoration: none;
 }
-  
 /* Image Styling */
 a .box img {
     margin-top: 3%;
@@ -46,10 +37,11 @@ a .box img {
 }
 
 .Services_background > p:hover {
-    text-shadow:1px 1px 10px #0000001a, 1px 1px 10px #0000001e;
     transition: font 1s ease-in;
     transition: font 0.3s ease-out;
 }
+
+
 
 .Services_background > p::after {
     content: '';
@@ -123,7 +115,7 @@ a .box-title {
     font-size: 2rem;
     font-weight: bold;
     color: #2b2b2b;
-    text-shadow: 2px 2px 3px #0000002d;
+
     transition: color 0.3s ease; 
 }
 
@@ -140,63 +132,4 @@ a .box:hover .box-title {
 
 a .box:hover .box-desc {
     color: #28a745; 
-}
-@media (max-width: 1024px) {
-}
-@media (max-width: 768px) {
-    .services_container {
-        flex-direction: column;
-    }
-
-    a .box {
-        width: 70%; /* Adjust width for smaller screens */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .Services_background > p:hover::after {
-        width: 20%;
-    }
-
-    .Services_background > p {
-        font-size: 30px;
-        margin-left: -1px;
-    }
-    .box-title{
-        font-size: 4vw;
-    }
-    .box-desc{
-        font-size: 2.5vw;
-    }
-
-    .services_container {
-        flex-direction: column; /* Stacks boxes vertically */
-    }
-}
-
-@media (max-width: 412px) {
-    .services_container {
-        flex-direction: column;
-    }
-
-    a .box {
-        width: 90%; /* Adjust width for smaller screens */
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .Services_background > p:hover::after {
-        width: 20%;
-    }
-
-    .Services_background > p {
-        font-size: 30px;
-        margin-left: -1px;
-    }
-    .box-title{
-        font-size: 4.5vw;
-    }
-    .box-desc{
-        font-size: 3vw;
-    }
 }

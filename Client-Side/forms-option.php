@@ -1,3 +1,6 @@
+<?php
+// forms-option.php
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,26 +24,21 @@
 </head>
 <body>
     <!-- NAVBAR-->   
-        <div class="header">
-            <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
-            <div class="university-text">
-                <p class="up">University of the Philippines</p>
-                <p id="down">MINDANAO</p>
+    <div class="header">
+                <a class="up-logo"href="../PHP/admin_login.php"><img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="UP Logo" /></a>
+                <div class="university-text">
+                    <p class="up">University of the Philippines</p>
+                    <p id="down">MINDANAO</p>
             </div>
-            
-            <nav class="desktop-nav">
-                <ul>
-                    <li><a href="#About_background">About</a></li>
-                    <li><a href="../HTML/Requirements.html">Application</a></li>
-                    <li><a href="../HTML/form-options.html">Permit Forms</a></li>
-                    <li>
-                        <button type="button" onclick="toggleSearch()" class="search-button">
-                            <i class="fa fa-search" style="color: white;"></i>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="../Client-Side/index.php">About</a></li>
+                <li><a href="../Client-Side/Requirements.php">Application</a></li>
+                <li><a href="../Client-Side/forms-option.php">Permit Forms</a></li>
+            </ul>
+        </nav>
+    </div>
     <!--NAVBAR-->
     
     <!--IMAGE-->
@@ -85,11 +83,11 @@
     </div>
 
 <!-- FOOTER -->
-    <footer class="footer">
+     <footer class="footer">
         <div class="footer-container">
         <!-- Left: University info -->
         <div class="footer-section">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/UP_Mindanao_Logo.svg/1200px-UP_Mindanao_Logo.svg.png" alt="UP Mindanao Logo" class="footer-logo">
+            <img src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="UP Mindanao Logo" class="footer-logo">
             <p class="footer-title">University of the Philippines<br><span class="footer-subtitle">MINDANAO</span></p>
             <p class="footer-quote">"Honor, <br>Excellence, and <br>Service"</p>
         </div>

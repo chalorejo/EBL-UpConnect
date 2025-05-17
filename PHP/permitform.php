@@ -70,10 +70,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../CSS/Requirement_Submission.css">
+        <link rel="stylesheet" href="../CSS/navigation_bar.css">
+        <link rel="stylesheet" href="../CSS/footer.css">
+        <link rel="stylesheet" href="../CSS/permit.css">
+        <link rel="stylesheet" href="../CSS/Requirement_Submission.css">
+
+        <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
+
     <title>Permit Form</title>
 </head>
 <body>
-    <h6>Request for Overnight/Weekend Permit</h6>
+    <!-- NAVBAR-->   
+            <div class="header">
+                <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
+                <div class="university-text">
+                    <p class="up">University of the Philippines</p>
+                    <p id="down">MINDANAO</p>
+                </div>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="../Client-Side/index.php">About</a></li>
+                        <li><a href="../Client-Side/Requirements.php">Application</a></li>
+                        <li><a href="../Client-Side/forms-option.php">Permit Forms</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+    <!--NAVBAR-->
+
+     <!--IMAGE-->
+        <div class="image-for-application"></div>
+    <!--IMAGE-->
 
     <?php if ($showMessageOnly): ?>
         <!-- design here Cha, this will show once na submit na -->
@@ -85,7 +117,10 @@
         <?php if (isset($message)): ?>
             <p><?php echo htmlspecialchars($message); ?></p>
         <?php endif; ?>
-
+        
+        <div class ="bgshade">
+        <div class ="req-about">
+        <h3>Request for Overnight/Weekend Permit</h3>
         <form action="" method="POST" enctype="multipart/form-data">
             <label for="studentNum">Student Number</label>
             <input type="text" name="studentNum" id="studentNum" required>
@@ -120,6 +155,8 @@
 
             <input type="submit" value="Submit" name="submit">
         </form>
+        </div>
+        </div>
     <?php endif; ?>
 </body>
 

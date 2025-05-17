@@ -36,7 +36,7 @@
         $uploadDir = 'requirement_file/';
         $uploadReqFile = $uploadDir . basename($_FILES['requirements']['name']);
         $imageFileType = strtolower(pathinfo($uploadReqFile, PATHINFO_EXTENSION));
-        $allowedTypes = ['jpg', 'jpeg', 'png', 'gif', 'pdf'];
+        $allowedTypes = ['pdf', 'doc', 'docx'];
 
         if (in_array($imageFileType, $allowedTypes)) {
             if (move_uploaded_file($_FILES['requirements']['tmp_name'], $uploadReqFile)) {
@@ -46,7 +46,7 @@
                 exit;
             }
         } else {
-            $errorMessage = "Invalid file type. Only JPG, PNG, GIF, and PDF are allowed.";
+            $errorMessage = "Invalid file type. Only DOC. DOCX, and PDF are allowed.";
             header("Location: ".$_SERVER['PHP_SELF']."?success=2&msg=" . urlencode($errorMessage));
             exit;
         }
@@ -203,7 +203,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Application Form</title>
+        
+        <link rel="stylesheet" href="../CSS/Requirement_Submission.css">
+        <link rel="stylesheet" href="../CSS/navigation_bar.css">
+        <link rel="stylesheet" href="../CSS/footer.css">
+
+        <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
+        <title>Application Forms</title>
+
     </head>
     <body>
         <?php if ($showMessageOnly == 3): ?>
@@ -215,144 +224,264 @@
                 <a href="../HTML/index.html">Go back to Home Page</a> <!--link to go back to home  -->
             </div>
         <?php else: ?>
-            <form action="" method="POST">
-                <!-- Student Basic Information -->
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname" required>
+            <!-- NAVBAR-->   
+            <div class="header">
+                <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
+                <div class="university-text">
+                    <p class="up">University of the Philippines</p>
+                    <p id="down">MINDANAO</p>
+                </div>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="../HTML/index.html">About</a></li>
+                        <li><a href="../HTML/Requirements.html">Application</a></li>
+                        <li><a href="../HTML/forms-option.html">Permit Forms</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <!--NAVBAR-->
 
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" required>
+            <!--IMAGE-->
+                <div class="image-for-application"></div>
+            <!--IMAGE-->
+            <!--Sumission Form-->
+            <div class="bgshade">           <!--BG FOR THE DIV-->
+                <div class="req-about">     <!--BOX FOR THR DIV-->
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <fieldset>
+                            <h3>Application Form</h3>
+                            <p class="important-note">IMPORTANT NOTE:<br>
+                                The Republic Act (RA) you would use for confidential information in the Philippines is Republic Act No. 10173, 
+                                also known as the Data Privacy Act of 2012. This law aims to protect individual personal information in information and 
+                                communications systems. <br><br>
+                                Everything state in this form will be treated with the UTMOST CONFIDENTIALITY.</p>
+                            
+                            <h4>Student Information</h4>
+                            <div class="student-info-section">
+                                <div>
+                                    <label for="fname">First Name</label> <br>
+                                    <input id="fname" type="text" placeholder="ex. John" name="fname" required>
+                                </div>
+                                <div>
+                                    <label for="lname">Last Name</label> <br>
+                                    <input id="lname" type="text" placeholder="ex. Doe" name="lname" required>
+                                </div>
+                                <div>
+                                    <label for="mname">Middle Name</label> <br>
+                                    <input id="mname" type="text" placeholder="ex. Dave" name="mname">
+                                </div>
+                                <div>
+                                    <label for="suffix">Suffix</label> <br>
+                                    <input id="suffix" type="text" placeholder="ex. Jr., if none leave blank" name="ename">
+                                </div>
+                                <div>
+                                    <label for="birthdate">Date of Birth</label> <br>
+                                    <input id="birthdate" type="date" placeholder="ex. YYYY/MM/DD" name="birthdate" required>
+                                </div>
+                                <div>
+                                    <label for="gender">Sex assigned at Birth</label> <br>
+                                            <select name="gender" id="gender">
+                                                <option value="" disabled selected>Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                </div>
+                                <div>
+                                    <label for="student-no">Student Number</label> <br>
+                                    <input id="student-no" type="text" placeholder="ex. 2024-XXXXX" name="studentNum" required pattern="^\d{4}-\d{5}$">
+                                </div>
+                                <div>
+                                    <label for="department">Department</label> <br>
+                                            <select name="department" id="department">
+                                                <option value="" disabled selected>Select Department</option>
+                                                <option value="Architecture">Architecture</option>
+                                                <option value="Human Kinetics">Human Kinetics</option>
+                                                <option value="Humanities">Humanities</option>
+                                                <option value="Social Science">Social Science</option>
+                                                <option value="DBSES">Biological Sciences and Environmental Studies</option>
+                                                <option value="DMPCS">Mathematics, Physics, and Computer Science</option>
+                                                <option value="DFSC">Food Science and Chemistry</option>
+                                                <option value="Management">Management</option>
+                                            </select>
+                                </div>
+                                <div>
+                                    <label for="course">Course</label> <br>
+                                            <select name="degProg" id="course" required>
+                                                <option value="" disabled selected>Select Course</option>
+                                                <option value="AASS">AA Sports Studies</option>
+                                                <option value="BACMA">BA Communications and Multimedia Arts</option>
+                                                <option value="BAE">BA English</option>
+                                                <option value="BSAE">BS Agribusiness Economics</option>
+                                                <option value="BSAnthro">BS Anthropology</option>
+                                                <option value="BSAM">BS Applied Mathematics</option>
+                                                <option value="BSArchi">BA Architechture</option>
+                                                <option value="BSB">BS Biology</option>
+                                                <option value="BSCS">BS Computer Science</option>
+                                                <option value="BSDS">BS Data Science</option>
+                                                <option value="BSFT">BS Food Technology</option>
+                                                <option value="BSSS">BS Sports Sciences</option> 
+                                            </select>
+                                </div>
+                                <div>
+                                    <label for="year-lvl">Year Level</label> <br>
+                                            <select name="year-lvl" id="year-lvl" required>
+                                                <option value="" disabled selected>Select Year</option>
+                                                <option value="1st">1st Year</option>
+                                                <option value="2nd">2nd Year</option>
+                                                <option value="3rd">3rd Year</option>
+                                                <option value="4th">4th Year</option>
+                                                <option value="5th">5th Year</option>
+                                            </select><br>
+                                </div>
+                            </div>
+                            <h4>Permanent Address</h4><br>
+                            <div class="address-section">
+                                <div>
+                                    <label for="bldg-no.">Floor no., Bldg. no., House no.</label> <br>
+                                    <input id="bldg-no." type="text" name="lotNum" required>
+                                </div>
+                                <div>
+                                    <label for="subdivision">Street, Bldg, Subdivision, Village</label> <br>
+                                    <input id="subdivision" type="text" name="street" required>
+                                </div>
+                                <div>
+                                    <label for="zipcode">Zipcode</label> <br>
+                                    <input id="zipcode" type="number" name="zipcode" required>
+                                </div>
+                                <div>
+                                    <label for="county">Country</label> <br>
+                                    <input id="country" type="text" placeholder="ex. Philippines" name="country" required>
+                                </div>
+                                <div>
+                                    <label for="region">Region</label> <br>
+                                    <select name="region" id="region" required>
+                                        <option value="" disabled selected>Select your region</option>
+                                        <option value="Region 1">Region I</option>
+                                        <option value="Region 2">Region II</option>
+                                        <option value="Region 3">Region III</option>
+                                        <option value="CALABARZON">Region IV-A</option>
+                                        <option value="MIMAROPA">Region IV-B</option>
+                                        <option value="Region 5">Region V</option>
+                                        <option value="Region 6">Region VI</option>
+                                        <option value="Region 7">Region VII</option>
+                                        <option value="Region 8">Region VIII</option>
+                                        <option value="Region 9">Region IX</option>
+                                        <option value="Region 10">Region X</option>
+                                        <option value="Region 11">Region XI</option>
+                                        <option value="Region 12">Region XII</option>
+                                        <option value="Region 13">Region XIII</option>
+                                        <option value="NCR">NCR</option>
+                                        <option value="CAR">CAR</option>
+                                        <option value="BARMM">BARMM</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="city">City</label> <br>
+                                    <input id="city" type="text" placeholder="ex. Davao City" name="city" required>
+                                </div>
+                                <div>
+                                    <label for="baranggay">Baranggay</label> <br>
+                                    <input id="baranggay" type="text" placeholder="ex. Dumoy" name="barangay" required>
+                                </div>
+                            </div><br>
 
-                <label for="mname">Middle Name</label>
-                <input type="text" id="mname" name="mname">
+                            <h4>Contact Information</h4>
+                            <div class="contact-section">
+                                <div>
+                                    <label for="cellphone">Cellphone Number</label> <br>
+                                    <input id="cellpohne" type="number" placeholder="ex. 09*********" name="cellphoneNum" required>
+                                </div> 
+                                <div>
+                                    <label for="telephone">Telephone Number</label> <br>
+                                    <input id="telepohne" type="number" placeholder="ex. (02) 123 4567" name="telphoneNum" required>
+                                </div> 
+                                <div>
+                                    <label for="p-mail">Primary Email Address</label> <br>
+                                    <input id="p-email" type="email" placeholder="ex. samplename.gmail.com" name="email" required>
+                                </div>
+                                <div>
+                                    <label for="s-mail">Secondary Email Address</label> <br>
+                                    <input id="s-email" type="email" placeholder="ex. samplename.gmail.com" name="email2" required>
+                                </div><br>
+                            </div>
 
-                <label for="ename">Suffix</label>
-                <input type="text" id="ename" name="ename">
+                            <h4>Emergency Contact</h4>
+                            <div class="emergency-contact-section">
+                                <div>
+                                    <label for="contactPersonF">First Name</label>
+                                    <input type="text" id="contactPersonF" name="contactPersonF">
+                                </div>
 
-                <label for="birthdate">Date of Birth</label>
-                <input type="date" id="birthdate" name="birthdate" required>
+                                <div>
+                                    <label for="contactPersonL">Last Name</label>
+                                    <input type="text" id="contactPersonL" name="contactPersonL">
+                                </div>
 
-                <label for="gender">Gender</label>
-                <select name="gender" id="gender" required>
-                    <option value="Female">Female</option>
-                    <option value="Male">Male</option>
-                </select>
+                                <div>
+                                    <label for="contactNum">Contact Number</label>
+                                    <input type="text" id="contactNum" name="contactNum" placeholder="09*********">
+                                </div>
+                            </div>
 
-                <label for="studentNum">Student Number</label>
-                <input type="text" name="studentNum" id="studentNum"
-                        pattern="^\d{4}-\d{5}$"
-                        placeholder="YYYY-12345"
-                        required>
+                            <h4>Requirement Submission Bin</h4>
+                            <label class="submission" for="fileReq">Add/Drop items here....</label>
+                            <input type="file" id="fileReq" name="requirements" accept=".pdf, .doc, .docx" required>
+                            
+                            <div class="lower-Buttons">
+                                <a class="back" href="../HTML/Requirements.html"><i class="fa-solid fa-arrow-left"></i></a>
+                                <input class="submit-now" type="submit" value="Submit Now" name="submit">
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
 
-                <label for="department">Department</label>
-                <select id="department" name="department">
-                    <option value="" disabled selected>Choose your department</option>
-                    <option value="Architecture">Architecture</option>
-                    <option value="Human Kinetics">Human Kinetics</option>
-                    <option value="Humanities">Humanities</option>
-                    <option value="Social Science">Social Science</option>
-                    <option value="DBSES">Biological Sciences and Environmental Studies</option>
-                    <option value="DMPCS">Mathematics, Physics, and Computer Science</option>
-                    <option value="DFSC">Food Science and Chemistry</option>
-                    <option value="Management">Management</option>
-                </select>
+            <!-- FOOTER -->
+             <footer class="footer">
+        <div class="footer-container">
+        <!-- Left: University info -->
+        <div class="footer-section">
+            <img src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="UP Mindanao Logo" class="footer-logo">
+            <p class="footer-title">University of the Philippines<br><span class="footer-subtitle">MINDANAO</span></p>
+            <p class="footer-quote">"Honor, <br>Excellence, and <br>Service"</p>
+        </div>
 
-                <label for="degProg">Course</label>
-                <select name="degProg" id="course" required>
-                    <option value="" disabled selected>Choose your department</option>
-                    <option value="AASS">AA Sports Studies</option>
-                    <option value="BACMA">BA Communications and Multimedia Arts</option>
-                    <option value="BAE">BA English</option>
-                    <option value="BSAE">BS Agribusiness Economics</option>
-                    <option value="BSAnthro">BS Anthropology</option>
-                    <option value="BSAM">BS Applied Mathematics</option>
-                    <option value="BSArchi">BA Architechture</option>
-                    <option value="BSB">BS Biology</option>
-                    <option value="BSCS">BS Computer Science</option>
-                    <option value="BSDS">BS Data Science</option>
-                    <option value="BSFT">BS Food Technology</option>
-                    <option value="BSSS">BS Sports Sciences</option> 
-                </select>
+        <!-- Center: Contacts -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Contacts</h3>
+            <div class="footer-contact">
+                <p><strong>Ms. Ann Miraflor Batomalaque</strong><br>
+                    Dormitory Manager,<br>
+                    Student Housing Services<br>
+                    Office of Student Affairs<br>
+                    University of the Philippines Mindanao<br>
+                Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Ms. Shela A. Camilotes</strong><br>
+                    Residence Life Coordinator,<br>
+                    Student Housing Services<br>
+                    Office of Student Affairs<br>
+                    University of the Philippines Mindanao<br>
+                Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
+            </div>
+        </div>
 
-                <label for="year">Year</label>
-                <select name="year" id="year" required>
-                    <option value="" disabled selected>Year level</option>
-                    <option value="1st">1st Year</option>
-                    <option value="2nd">2nd Year</option>
-                    <option value="3rd">3rd Year</option>
-                    <option value="4th">4th Year</option>
-                    <option value="5th">5th Year</option>
-                </select>
+        <!-- Right: Socials -->
+        <div class="footer-section">
+            <h3 class="footer-heading">Follow us on our Socials!</h3>
+            <p><i class="fa fa-facebook-square"></i> EBL DORM</p>
+            <p><i class="fa fa-envelope"></i> eliaslopezdormitory@gmail.com</p>
+        </div>
+        </div>
 
-                <!-- Permanent Address -->
-                <label for="lotNum">Floor no., Bldg. no., House no.</label>
-                <input type="text" name="lotNum" id="lotNum">
-
-                <label for="street">Street, Bldg, Subdivison, Village</label>
-                <input type="text" name="street" id="street">
-
-                <label for="zipcode">Zip Code</label>
-                <input type="number" name="zipcode" id="zipcode">
-
-                <label for="country">Country</label>
-                <input type="text" name="country" id="country">
-
-                <label for="region">Region</label>
-                <select name="region" id="region" required>
-                    <option value="" disabled selected>Select your region</option>
-                    <option value="Region 1">Region I</option>
-                    <option value="Region 2">Region II</option>
-                    <option value="Region 3">Region III</option>
-                    <option value="CALABARZON">Region IV-A</option>
-                    <option value="MIMAROPA">Region IV-B</option>
-                    <option value="Region 5">Region V</option>
-                    <option value="Region 6">Region VI</option>
-                    <option value="Region 7">Region VII</option>
-                    <option value="Region 8">Region VIII</option>
-                    <option value="Region 9">Region IX</option>
-                    <option value="Region 10">Region X</option>
-                    <option value="Region 11">Region XI</option>
-                    <option value="Region 12">Region XII</option>
-                    <option value="Region 13">Region XIII</option>
-                    <option value="NCR">NCR</option>
-                    <option value="CAR">CAR</option>
-                    <option value="BARMM">BARMM</option>
-                </select>
-        
-                <label for="city">City</label>
-                <input type="text" name="city" id="city" required>
-
-                <label for="barangay">Barangay</label>
-                <input type="text" name="barangay" id="barangay" required>
-
-                <!-- Contact Information -->
-                <label for="cellphoneNum">Cellphone Number</label>
-                <input type="tel" id="cellphoneNum" name="cellphoneNum" required placeholder="09*********">
-
-                <label for="telphoneNum">Telephone Number</label>
-                <input type="tel" id="telphoneNum" name="telphoneNum">
-
-                <label for="email">Primary Email Address</label>
-                <input type="email" id="email" name="email">
-
-                <label for="email2">Secondary Email Address</label>
-                <input type="email" id="email2" name="email2">
-
-                <!-- Contact person for mergencies -->
-                <label for="contactPersonF">First Name</label>
-                <input type="text" id="contactPersonF" name="contactPersonF" required>
-
-                <label for="contactPersonL">Last Name</label>
-                <input type="text" id="contactPersonL" name="contactPersonL" required>
-
-                <label for="contactNum">Contact Number</label>
-                <input type="text" id="contactNum" name="contactNum" placeholder="09*********" required>
-
-                <label for="requirements">Requirement Submission Bin</label>
-                <input type="file" id="requirements" name="requirements" accept="application/pdf" required>
-
-                <input type="submit" value="Submit Now" name="submit">
-            </form>
-        <?php endif; ?>
-    </body>
+        <div class="footer-bottom">
+            © 2025 University of the Philippines Mindanao
+        </div>
+    </footer>
+            <!-- FOOTER -->
+                <?php endif; ?>
+</body>
 </html>

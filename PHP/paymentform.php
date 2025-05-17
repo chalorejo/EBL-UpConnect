@@ -71,6 +71,15 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../CSS/Requirement_Submission.css">
+        <link rel="stylesheet" href="../CSS/navigation_bar.css">
+        <link rel="stylesheet" href="../CSS/footer.css">
+        <link rel="stylesheet" href="../CSS/paymentform.css">
+
+        <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
+        
         <title>Payment Form</title>
     </head>
     <body>
@@ -83,7 +92,32 @@
             <?php if (isset($message)): ?>
                 <p><?php echo htmlspecialchars($message); ?></p>
             <?php endif; ?>
+            
+            <!-- NAVBAR-->   
+            <div class="header">
+                <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
+                <div class="university-text">
+                    <p class="up">University of the Philippines</p>
+                    <p id="down">MINDANAO</p>
+                </div>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="../Client-Side/index.php">About</a></li>
+                        <li><a href="../Client-Side/Requirements.php">Application</a></li>
+                        <li><a href="../Client-Side/forms-option.php">Permit Forms</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+            <!--NAVBAR-->
 
+            <!--IMAGE-->
+                <div class="image-for-application"></div>
+            <!--IMAGE-->
+
+            <div class="bgshade">      
+            <div class="req-about"> 
             <form action="" method="post" enctype="multipart/form-data">
                 <!-- student number nalang ang input, no need for name and other info-->
                 <label for="studentnumber">STUDENT NUMBER</label> <br>
@@ -91,11 +125,16 @@
 
                 <!--payment for-->
                 <label>Purpose of payment</label><br>
-                <input type="checkbox" id="rent" name="payment" value="Monthly Rent" onchange="updatePaymentValue()">
-                <label for="rent">Monthly Rent</label><br>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="rent" name="payment" value="Monthly Rent" onchange="updatePaymentValue()">
+                    <label for="rent">Monthly Rent</label>
+                </div>
 
-                <input type="checkbox" id="appliances" name="payment" value="Other Appliances" onchange="updatePaymentValue()">
-                <label for="appliances">Other Appliances</label><br>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="appliances" name="payment" value="Other Appliances" onchange="updatePaymentValue()">
+                    <label for="appliances">Other Appliances</label>
+                </div>
+
 
                 <!-- Hidden input that will store the final value -->
                 <input type="hidden" name="payment_for" id="payment_for" required>
@@ -114,6 +153,9 @@
 
                 <input type="submit" value="Submit" name="submit">
             </form>
+            </div>
+            </div>
+
         <?php endif; ?>
     </body>
 

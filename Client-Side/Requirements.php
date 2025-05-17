@@ -1,3 +1,7 @@
+<?php
+// requirements.php
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,6 @@
 
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/2nNpfB4/Untitled-design-24.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/d5b4e20b91.js" crossorigin="anonymous"></script>
 
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
@@ -22,60 +25,57 @@
 <body>
     <!-- NAVBAR-->   
     <div class="header">
-        <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="">
+        <a class="up-logo" href="admin_login.php">
+            <img id="homeLogo" src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="UP Logo" />
+        </a>
         <div class="university-text">
             <p class="up">University of the Philippines</p>
             <p id="down">MINDANAO</p>
         </div>
-        
+
         <nav class="desktop-nav">
             <ul>
-                <li><a href="../HTML/index.html">About</a></li>
-                <li><a href="../HTML/Requirements.html">Application</a></li>
-                <li><a href="../HTML/forms-option.html">Permit Forms</a></li>
-                <li>
-                    <button type="button" onclick="toggleSearch()" class="search-button">
-                        <i class="fa fa-search" style="color: white;"></i>
-                    </button>
-                </li>
+                <li><a href="../Client-Side/index.php">About</a></li>
+                <li><a href="../Client-Side/Requirements.php">Application</a></li>
+                <li><a href="../Client-Side/forms-option.php">Permit Forms</a></li>
             </ul>
         </nav>
     </div>
     <!--NAVBAR-->
+
     <!--IMAGE-->
     <div class="image-for-application">
         <img src="https://i.ibb.co/JFkCRXnx/3-Administration-Building.png">
     </div>
     <!--IMAGE-->
-    <!--DORM ACCOMODATION/REQ/OTHER -->
+
+    <!--DORM ACCOMMODATION/REQ/OTHER -->
     <div class="req-about">
         <div class="info">
-        
             <div class="class-info">
                 <h3>Dormitory Accommodation</h3>
-                <p class="ReqBold-second"> Prioritization will be categorized into the following:</p>
+                <p class="ReqBold-second">Prioritization will be categorized into the following:</p>
                 <p class="ReqBold">1. First Year Students</p>
                 <ul>
                     <li>Living outside Davao City</li>
                 </ul>
-                <p class="ReqBold">2. UP Mindanao students who belong to the category of FDS (Full Discount with stipend) 
-                    in their SLAS (Student Learning Assistance System) application results.
-                </p>
+                <p class="ReqBold">2. UP Mindanao students who belong to the category of FDS (Full Discount with stipend) in their SLAS (Student Learning Assistance System) application results.</p>
                 <ul>
                     <li>Living outside Davao City</li>
                     <li>With Good Standing Status in the dormitory (not more than 5 minor offenses).</li>
                 </ul>
-            
-                <p class="ReqBold">
-                    3. Dormers with contract in the Garden and the Kitchen (not more than 5 minor offenses).<br><br>
+
+                <p class="ReqBold">3. Dormers with contract in the Garden and the Kitchen (not more than 5 minor offenses).<br><br>
                     4. UP Mindanao students living outside Davao City with good standing status.
                 </p>
+
                 <p class="ReqBold-second">Prioritization of places living outside Davao City</p>
                 <ol>
                     <li>From Luzon</li>
                     <li>From Visayas</li>
                     <li>From Mindanao</li>
                 </ol>
+
                 <h3>Requirements</h3>
                 <ul>
                     <li>Fully Accomplished and Signed Dorm Contract</li>
@@ -86,6 +86,7 @@
                     <li>Photocopy of Form 5 (proof that the student is already enrolled) to be submitted on or before 15 days after the start of the classes</li>
                     <li>Have read the Dormitory Rules and Policies in the Student Handbook</li>
                 </ul>
+
                 <h3>Other Requirements</h3>
                 <ul>
                     <li>Personal Hygiene Kit and Disinfection Materials</li>
@@ -97,63 +98,66 @@
                     <li>Trash Can</li>
                     <li>Pail and dipper</li>
                 </ul>
+
                 <br><br>
                 <div class="lower-Buttons">
-                    <button class="back"><a href="../HTML/index.html"><i class="fa-solid fa-arrow-left"></i></a></button>
+                    <button class="back">
+                        <a href="index.php"><i class="fa-solid fa-arrow-left"></i></a>
+                    </button>
                     <div class="continue-button">
                         <p class="continue"><strong>Proceed to Application Form</strong></p>
-                        <button class="sub"><a href="../PHP/applicationform.php"><i class="fa-solid fa-arrow-right"></i></a></button>
+                        <button class="sub">
+                            <a href="applicationform.php"><i class="fa-solid fa-arrow-right"></i></a>
+                        </button>
                     </div>
-                    
                 </div>
             </div>
         </div>
     </div>
-    <!--DORM ACCOMODATION/REQ/OTHER -->
+    <!--DORM ACCOMMODATION/REQ/OTHER -->
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
-        <!-- Left: University info -->
-        <div class="footer-section">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/UP_Mindanao_Logo.svg/1200px-UP_Mindanao_Logo.svg.png" alt="UP Mindanao Logo" class="footer-logo">
-            <p class="footer-title">University of the Philippines<br><span class="footer-subtitle">MINDANAO</span></p>
-            <p class="footer-quote">"Honor, <br>Excellence, and <br>Service"</p>
-        </div>
-
-        <!-- Center: Contacts -->
-        <div class="footer-section">
-            <h3 class="footer-heading">Contacts</h3>
-            <div class="footer-contact">
-                <p><strong>Ms. Ann Miraflor Batomalaque</strong><br>
-                    Dormitory Manager,<br>
-                    Student Housing Services<br>
-                    Office of Student Affairs<br>
-                    University of the Philippines Mindanao<br>
-                Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
+            <!-- Left: University info -->
+            <div class="footer-section">
+                <img src="https://i.ibb.co/2nNpfB4/Untitled-design-24.png" alt="UP Mindanao Logo" class="footer-logo">
+                <p class="footer-title">University of the Philippines<br><span class="footer-subtitle">MINDANAO</span></p>
+                <p class="footer-quote">"Honor, <br>Excellence, and <br>Service"</p>
             </div>
-            <div class="footer-contact">
-                <p><strong>Ms. Shela A. Camilotes</strong><br>
-                    Residence Life Coordinator,<br>
-                    Student Housing Services<br>
-                    Office of Student Affairs<br>
-                    University of the Philippines Mindanao<br>
-                Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
-            </div>
-        </div>
 
-        <!-- Right: Socials -->
-        <div class="footer-section">
-            <h3 class="footer-heading">Follow us on our Socials!</h3>
-            <p><i class="fa fa-facebook-square"></i> EBL DORM</p>
-            <p><i class="fa fa-envelope"></i> eliaslopezdormitory@gmail.com</p>
-        </div>
+            <!-- Center: Contacts -->
+            <div class="footer-section">
+                <h3 class="footer-heading">Contacts</h3>
+                <div class="footer-contact">
+                    <p><strong>Ms. Ann Miraflor Batomalaque</strong><br>
+                        Dormitory Manager,<br>
+                        Student Housing Services<br>
+                        Office of Student Affairs<br>
+                        University of the Philippines Mindanao<br>
+                    Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
+                </div>
+                <div class="footer-contact">
+                    <p><strong>Ms. Shela A. Camilotes</strong><br>
+                        Residence Life Coordinator,<br>
+                        Student Housing Services<br>
+                        Office of Student Affairs<br>
+                        University of the Philippines Mindanao<br>
+                    Email: <a href="mailto:shs_osa.upmindanao@up.edu.ph">shs_osa.upmindanao@up.edu.ph</a></p>
+                </div>
+            </div>
+
+            <!-- Right: Socials -->
+            <div class="footer-section">
+                <h3 class="footer-heading">Follow us on our Socials!</h3>
+                <p><i class="fa fa-facebook-square"></i> EBL DORM</p>
+                <p><i class="fa fa-envelope"></i> eliaslopezdormitory@gmail.com</p>
+            </div>
         </div>
 
         <div class="footer-bottom">
             © 2025 University of the Philippines Mindanao
         </div>
     </footer>
-
 </body>
 </html>
