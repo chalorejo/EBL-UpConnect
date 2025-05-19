@@ -64,15 +64,15 @@
         <nav class="desktop-nav">
             <ul>
                 <li><a href="../PHP/admin_view.php">Student Records</a></li>
+                <li><a href="../PHP/permit_records.php">Permit Records</a></li>
                 <li><a href="dormer_history.php">Dormer History</a></li>
                 <li><a href="../PHP/logout_process.php">Log Out</a></li>
-                <li class="search-bar">
-                    <?php include 'search_bar.php'; ?>
-                </li>
             </ul>
         </nav>
-    </div><br><br><br><br><br><br><br><br>
-<!--NAVBAR-->
+    </div><br><br><br><br><br>
+    <!--NAVBAR-->
+
+    <?php include 'search_bar.php'; ?>
 
     <?php if ($noResults): ?>
         <p class="error">No matching records found for "<?php echo htmlspecialchars($search); ?>".</p>
