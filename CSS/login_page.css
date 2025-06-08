@@ -1,0 +1,116 @@
+/* General Styling */
+body {
+    background-image: url('https://i.ibb.co/Rk20CgCN/LOGIN-PAGE.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+}
+
+/* Logo + University Text */
+#homeLogo {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+    margin-left: 50px;
+}
+
+.university-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.up {
+    font-size: 14px;
+    color: #8a1438;
+    margin: 0;
+}
+
+#down {
+    font-size: 30px;
+    color: #8a1438;
+    margin: 0;
+}
+
+/* Main Title */
+h3 {
+    font-size: 4vw;
+    color: #00573F;
+    font-family: 'Optima', sans-serif;
+    line-height: 1;
+    padding-left: 60px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+h3 span {
+    color: #8a1438;
+}
+
+/* Login Form (unstyled box) */
+.login-form {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #54595F;
+    padding-left: 60px;
+    padding-top: 5px;
+}
+
+.login-form label {
+    font-size: 0.9em;
+}
+
+.login-form input {
+    width: 250px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 1px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1em;
+}
+
+/* Login Button */
+.login-form button {
+    width: 100px;
+    background-color: #00573F;
+    color: white;
+    font-size: 1em;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: -10px;
+    align-items: flex-end;
+}
+
+.login-form button:hover {
+    background-color: #003d2b;
+}
+
+/* Link styling */
+.login-form a {
+    font-style: italic;
+    font-weight: bold;
+    color: #8a1438;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    margin-right: 50px;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+p{
+    font-size: 1em;
+    color: #8a1438;
+    margin-top: 10px;
+    margin-bottom: 0;
+}

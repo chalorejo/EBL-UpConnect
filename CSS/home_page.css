@@ -1,0 +1,88 @@
+
+/*HOME PAGE*/ 
+.Home_background {
+    display: flex;
+    height: 600px;
+    position: relative;
+}
+  
+.Home_background > div {    
+    flex: 1;
+    position: relative;
+    margin-top: 70px;
+}
+  
+.Obli {
+    background-image: url('https://i.ibb.co/RpC9VFk/oblation-1-1-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 3%;
+    height: 100%;
+    display: flex;
+}
+
+  
+.Bname {
+    background-image: url('https://i.ibb.co/3zwJf8D/2560px-UPMin-EBL.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: 3%;
+    height: 100%;
+    display: flex;
+    
+}
+  
+.shade,.Name {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+  
+.shade {
+    background: linear-gradient(to left, #7a1936, rgba(145, 14, 12, 0.4), #ba18161a 60%, transparent);
+}
+  
+.Name {
+    padding: 150px 0 0 20px;
+    color: white;
+    background: linear-gradient(to right, #7a1936, #7e1836b9);
+    height: 75%;
+    text-shadow: 2px 2px 15px #000000a9;
+}
+  
+.upconnect {
+    margin: 0;
+}
+
+.Name p{
+    margin-left: 5%;
+    margin-top: -10%;
+
+}
+  
+.wconnect {
+    color: #FFB81C;
+}
+
+.ebl {
+    font-size: 6.5vw;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    font-family: 'Optima';
+}
+.upconnect {
+    font-size: 6.5vw;
+    margin-bottom: 5vw;
+}
+
+span{
+    font-family: 'Optima';
+}
+
+.values i{
+    font-size: 1.5vw;
+}
+

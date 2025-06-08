@@ -1,0 +1,181 @@
+
+.req-about {
+    display: flex;
+    height: 1000px;
+    position: relative;
+    height: auto;
+    margin-top: -10px;
+    background-image: url('https://i.ibb.co/9mrJVVB4/bg-ebl.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: fit-content;
+    display: flex;
+    flex-grow: 3;
+    padding-right: 2.5rem;
+
+}
+  
+.req-about > div {    
+    flex: 1;
+    position: relative;
+}
+  
+.info {
+    background: rgba(255, 255, 255, 0.237); 
+    border-radius: 12px;                  
+    box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.401); 
+    padding: 30px;                     
+    max-width: 1200px;                   
+    margin: 40px auto;                    
+    backdrop-filter: blur(8px);          
+}
+
+.class-info{
+    margin-top: 75px;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-weight: bold;
+    color: #00573F;
+}
+
+.ReqBold{
+    font-weight: bold;
+    color: #282c32;
+}
+
+h3{
+    text-align: center;
+    font-family: 'Optima';
+    font-weight: normal;
+}
+
+.ReqIndent {
+    color: #282c32;
+    text-indent: 25px;
+}
+
+
+p, ol, ul {
+    margin-left: 40px;
+    font-size: 1rem;
+}
+
+.ReqBold, .ReqBold-first,.ReqBold-second{
+    margin-left: 40px;
+    font-size: 1rem;
+}
+
+.ReqIndent-first{
+    margin-left: 60px;
+}
+.first {
+    margin-top: -10px;
+}
+
+.second {
+    text-align: justify;
+}
+
+.lowertButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+}
+
+
+h3 {
+    font-size: 2.3rem;
+    margin-left: 45px;
+    position: relative;
+}
+
+h3:hover {
+    text-shadow:1px 1px 10px #00000011, 1px 1px 10px #00000000;
+    transition: font 1s ease-in;
+    transition: font 0.3s ease-out;
+}
+
+
+.class-info{
+    margin-right: 40px;
+    text-align: justify;
+}
+
+h3:hover::after {
+    width: 7.5%;
+}
+
+h3::after {
+    display: none;
+}
+
+.image-for-application {
+    height: 60%;
+    margin-bottom: -10px;
+}
+
+/* Navigation Button Styling */
+.lower-Buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.back, .sub {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    min-width: 60px;
+    min-height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.back {
+    margin-left: 50px;
+    background-color: #666666;
+}
+
+.sub {
+    background-color: #00573F;
+}
+
+.back:hover{
+    background-color: #00573F;
+}
+
+.sub:hover{
+    background-color: #02241a;
+}
+
+.continue-button {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.continue {
+    font-size: 1.1rem;
+    color: #00573F;
+}
+
+/* Link Styling Inside Buttons */
+button a {
+    text-decoration: none;
+    color: white;
+}
+
